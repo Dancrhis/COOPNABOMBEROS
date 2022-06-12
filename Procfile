@@ -1,1 +1,1 @@
-web: gunicorn COOPNABOMBEROS.wsgi --log-file -
+web: gunicorn conaweb.wsgi --log-file -

@@ -1,8 +1,6 @@
-from cProfile import label
+
 from datetime import datetime
 from distutils.command.upload import upload
-from re import sub
-from turtle import title
 from django.db import models
 from django.contrib.auth.models import User
 

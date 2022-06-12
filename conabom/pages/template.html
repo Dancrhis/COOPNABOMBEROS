@@ -1,0 +1,159 @@
+{% load static %}
+{%  block head %}
+<!DOCTYPE html>
+<html lang="en">
+   
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COOPNABOMBEROS</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,800;1,600;1,800&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="{% static 'IMG/logo2.bmp'%}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'CSS/style.css' %}">
+    <script src="https://kit.fontawesome.com/30bd34e812.js" crossorigin="anonymous"></script>
+</head> 
+{% endblock %}
+{%  block body %}
+<body>
+    <div class="body_content">
+
+        {% block header %}
+        
+        <header>
+            
+            <div class="main-header" >
+                <div class="logo-container">
+                    <a href="/index"><img class="logo" src="{% static 'IMG/logo.bmp'%}" alt="logo"></a>  
+                </div>
+                <div class="container_menu">
+                    <ul class="menu-btn" id="menu-btn">
+                        <li ><a href="#" onclick="mostrarMenu()"><i class="fa-solid fa-bars"></i></a></i></li> 
+                     </ul>
+                   
+                    <nav class="menu" id="menu">
+                        
+                            <a href="{% url 'index'%}"><img class="menu_logo" src="{% static 'IMG/logo2.bmp'%}" alt=""></a>
+                        
+                        <ul>
+                            
+                            <li><a href="#">Nosotros</a>
+                                   <ul>
+                                       <li><a href="#">Historia</a></li>
+                                       <li><a href="#">Mision</a></li>
+                                       <li><a href="#">Vision</a></li>
+                                       <li><a href="#">Valores</a></li>
+                                       <li><a href="#">Mensaje del presidente</a></li>
+                                   </ul>
+                               </li>
+                               <li><a href="#">Servicios</a>
+                                   <ul>
+                                       <li><a href="#">Ahorro</a></li>
+                                       <li><a href="#">Prestamo</a></li>
+                                       <li><a href="#">Plan de ayuda mutua</a></li>
+                                       <li><a href="#">Programa Emprende</a></li>
+                                       <li><a href="#">Ordenes de compra</a></li>
+                                       <li><a href="#">Tienda</a></li>
+                                   </ul>
+                               </li>
+                               <li><a href="#">Recursos</a>
+                                   <ul>
+                                       <li><a href="#">Actividades</a></li>
+                                       <li><a href="#">Noticias</a></li>
+                                       <li><a href="#">Videos</a></li>
+                                       <li><a href="#">Galeria</a></li>
+                                       <li><a href="#">Proximos eventos</a></li>
+                                   </ul>
+                               </li>
+                               <li><a href="#">Educacion al socio</a>
+                                   <ul>
+                                       <li><a href="#">Capacitacion Puntual</a></li>
+                                       <li><a href="#">informacion Personal</a></li>
+                                       <li><a href="#">Asistencia Tecnica</a></li>
+                                   </ul>
+                               </li>
+                               <li><a href="#">Preguntas Frecuentes</a></li>
+                               
+                               
+                        </ul>
+                    </nav>
+                    <div class="back_menu" id="back_menu">
+    
+                    </div>
+                </div>
+                <div class="login-container">
+                    <a href="{% url 'login'%}"><i class="fa-solid fa-right-to-bracket"></i> acceder</a>
+
+                </div>
+            </div>
+            <div>
+            
+        </div>
+    
+        </header>
+        {% block nav %}
+        
+        {% endblock %}
+        {% endblock %}
+        {% block content %}
+        
+        {% endblock %}
+    
+      {%  block footer %}
+        
+        <footer class="footer">
+            <div class="container_footer">
+                <div class="box__footer">
+                    <div class="logo_footer">
+                        <img  src="{% static 'IMG/logo2.bmp'%}" alt="logo">
+    
+                    </div>
+                    <div class="terminos">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, ipsum voluptate consequuntur quod facere nulla, doloremque odio ipsam accusamus sapiente aut? Ad tenetur tempore commodi provident deleniti sequi iure laboriosam?</p>
+        
+                    </div>
+                </div>
+                <div class="box__footer">
+                    <h2>Servicios</h2>
+                    <a href="#">Ahorros</a>
+                    <a href="#">Prestamos</a>
+                    <a href="#">Plan de  ayuda mutua</a>
+                    <a href="#">Programa Emprende</a>
+                    <a href="#">Ordenes de compra</a>
+                    <a href="#">Tienda</a>
+                </div>
+                <div class="box__footer">
+                    <h2>contactanos</h2>
+                    <p><i class="fa-solid fa-location-dot"></i>  Calle paseo del Yaque #30,
+                         Los Rios, Santo Domingo, DN</p>
+                    <p><i class="fa-solid fa-phone"></i> 809-448-7553</p>
+                    <p><i class="fa-solid fa-envelope"></i> <a href="mailto:coopnabomberos@gmail.com">coopnabomberos@gmail.com</a>
+                        
+                </div>
+                <div class="box__footer">
+                    <h2>siguenos</h2>
+                    <a href=""><i class="fa-brands fa-facebook"></i></a>
+                    <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    <a href=""><i class="fa-brands fa-twitter"></i></a>
+                </div>
+    
+                
+            </div>
+            <div class="box__copyrigth">
+                <hr>
+                <p>Todos los derechos reservados</p>
+                <p><b>COOPNABOMBEROS<b></p>
+            </div>
+            
+    
+        </footer>
+        {% endblock%}
+    
+        
+    </div>
+</body>
+{% endblock %}
+</html>

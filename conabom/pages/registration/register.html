@@ -1,0 +1,68 @@
+{% extends 'template.html'%}
+{% load static %}
+
+
+{% block content%}
+<div class="login_page_body">
+  <div class="marco_contenido">
+    <div class="form_logo_container">
+      <img src="{% static 'IMG/logo2.bmp'%}" alt="">
+    </div>
+    <div class="form_container">
+
+      {% if form.errors %}
+      <p>Tu usuario y contraseña no coinciden. Por favor intenta denuevo.</p>
+      {% endif %}
+      
+      {% if next %}
+          {% if user.is_authenticated %}
+          <p>Tu cuenta no tiene acceso a esta pagina. Para proceder, por favor loguearse con una cuenta con acceso.</p>
+          {% else %}
+          <p>Por favor logueate para ver esta pagina.</p>
+          {% endif %}
+      {% endif %}
+      
+      <form method="post" action="{% url 'register' %}">
+      {% csrf_token %}
+      
+      <table>
+        <tr>
+          <td class="form_label">Usuario:</td>
+          <td class="form_input">{{form.username}}</td>
+          
+        </tr>
+        <tr>
+          <td class="form_label">Email:</td>
+          <td class="form_input">{{form.email}}</td>
+          
+        </tr>
+        <tr>
+          <td class="form_label">Contraseña:</td>
+          <td class="form_input">{{form.password1}}</td>
+          
+        </tr>
+        <tr>
+          <td colspan="2"><p>tu contraseña debe tenet por lo menos 8 caracteres</p></td>
+        </tr>
+        <tr>
+          <td class="form_label">Confirmar contraseña:</td>
+          <td class="form_input">{{form.password2}}</td>
+        </tr>
+      </table>
+      <div class="login-btn">
+        <input type="submit" value="Registrarse">
+      </div>
+      </form>
+      
+      <div class="login-btn">
+        <a href="{% url 'login' %}"> logearse</a>
+        <a href="{% url 'index' %}"> Inicio</a> 
+      </div>
+      
+    </div>
+     
+  </div>
+</div>
+
+
+{% endblock %}

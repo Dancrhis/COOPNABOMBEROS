@@ -1,0 +1,56 @@
+{% extends 'template.html'%}
+{% load static %}
+
+
+{% block content%}
+<div class="login_page_body">
+
+  <div class="marco_contenido">
+    <div class="form_logo_container">
+      <img src="{% static 'IMG/logo2.bmp'%}" alt="">
+    </div>
+    
+    <div class="form_container">
+    
+      
+      
+      {% if next %}
+          {% if user.is_authenticated %}
+          <p>Tu cuenta no tiene acceso a esta pagina. Para proceder, por favor loguearse con una cuenta con acceso.</p>
+          {% else %}
+          <p>Por favor logueate para ver esta pagina.</p>
+          {% endif %}
+      {% endif %}
+      
+      <form method="post" action="{% url 'login' %}">
+      {% csrf_token %}
+      <table>
+        <tr>
+          <td class="form_label">Usuario:</td>
+          <td class="form_input">{{ form.username }}</td>
+        </tr>
+        <tr>
+          <td class="form_label">Contraseña:</td>
+          <td class="form_input">{{ form.password }}</td>
+        </tr>
+      </table>
+      <div class="error_msg">
+        {% if form.errors %}
+      <p>Tu usuario y contraseña no coinciden. Por favor intenta denuevo.</p>
+      {% endif %}
+      </div>
+      
+      <div class="login-btn">
+        <input type="submit" value="acceder" />
+        
+      </div>
+      </form>
+      
+     
+      <p><a href="{% url 'password_reset' %}">recuperar contraseña</a></p>
+      <p><a href="{% url 'register' %}">registrarse</a></p>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

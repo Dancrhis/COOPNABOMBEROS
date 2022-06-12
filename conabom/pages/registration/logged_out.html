@@ -1,0 +1,15 @@
+{% extends 'template.html'%}
+{% load static %}
+
+
+{% block content%}
+
+
+<div class="login_page_body">
+    <div class="marco_contenido">
+        <p>sesion finalizada</p>
+
+        <a href="{% url 'login'%}">Click aqui para volver a ingresar.</a>
+    </div>
+</div>
+{% endblock %}

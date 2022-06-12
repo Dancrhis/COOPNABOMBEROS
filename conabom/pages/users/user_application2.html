@@ -1,0 +1,59 @@
+{% extends 'template.html'%}
+{% load static %}
+
+{% block login %}
+<div>
+    {% if user.is_authenticated %}
+    <li>User: {{ user.get_username }}</li>
+    <li><a href="{% url 'logout'%}">Logout</a></li>
+  {% else %}
+    <li><a href="{% url 'login'%}?next={{request.path}}">Login</a></li>
+  {% endif %} 
+ </ul>
+</div>
+{% endblock %}
+{% block content%}
+<main>
+  <div class="sidebar">
+    <div class="user_section">
+      <a href="">solicitar afiliacion</a>
+    </div>
+    <div class="user_section">
+      <a href=""></a>
+    </div>
+    <div class="user_section">
+      <a href="">cuenta</a>
+    </div>
+  </div>
+    <div class="user-content">
+      <div class="aplication_form_container">
+        <form action="" method="post">
+          <label for="nombre1">Nombre:</label>
+          <input type="text" name="nombre1" id="nombre1" required>
+          <label for="nombre2">segundo Nombre:</label>
+          <input type="text" name="nombre2" id="nombre2">
+          <label for="apellido1">Apellido:</label>
+          <input type="text" name="apellido1" id="apellido1" required>
+          <label for="apellido2"> segundo apellido:</label>
+          <input type="text" name="apellido2" id="apellido2">
+          <label for="cedula">cedula:</label>
+          <input type="number" name="cedula" id="cedula">
+          <label for="parentezco"></label>
+          <select name="parentezco" id="parentezco">
+            <option value="madre">Madre</option>
+            <option value="padre">Padre</option>
+            <option value="hermano">hermano</option>
+            <option value="hermana">hermana</option>
+            <option value="hijo">hijo</option>
+            <option value="hija">hija</option>
+            
+          </select>
+          <label for="porcentaje">porcentaje</label>
+          <input type="number" name="porcentaje" id="porcentaje">
+
+        </form>
+      </div>
+      
+    </div>
+</main>
+{% endblock %}

@@ -1,0 +1,290 @@
+{% extends 'template.html'%}
+{% load static %}
+
+
+{% block content%}
+<style>
+    #slide1{
+        background-image: url({% static 'IMG/images/slider1.jpg'%});
+    }
+    #slide2{
+        background-image: url({% static 'IMG/images/slider2.jpg'%});
+    }
+    #slide3{
+        background-image: url({% static 'IMG/images/slider3.jpg'%});
+    }
+    #slide4{
+        background-image: url({% static 'IMG/images/slider1.jpg'%});
+    }
+</style>
+<main>
+    <div class="banner">
+        <div class="contenedor">
+            <div class="slider-contenedor">
+                <section class="contenido-slider" id="slide1" >
+                    <div >
+                        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima ipsa ipsam aliquam natus quidem
+                            sed. Quos cupiditate id delectus est.</h2>
+                        <a href="#">Ver mas...</a>
+                    </div>
+                   
+                </section>
+                <section class="contenido-slider" id="slide2">
+                    <div >
+                        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima ipsa ipsam aliquam natus quidem
+                            sed. Quos cupiditate id delectus est.</h2>
+                        <a href="#">Ver mas...</a>
+                    </div>
+                    
+    
+                </section>
+            <section class="contenido-slider" id="slide3">
+                <div>
+                    <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima ipsa ipsam aliquam natus quidem
+                        sed. Quos cupiditate id delectus est.</h2>
+                    <a href="#">Ver mas...</a>
+                </div>
+                
+    
+            </section>
+            <section class="contenido-slider" id="slide4">
+                <div>
+                    <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima ipsa ipsam aliquam natus quidem
+                        sed. Quos cupiditate id delectus est.</h2>
+                    <a href="#">Ver mas...</a>
+                </div>
+                
+    
+            </section>
+        </div>
+        </div>
+        <script src="{% static 'JS/main.js'%}"></script>
+    </div>
+
+    <div class="main_info">
+        <div class="main_info_container">
+            <div class="main_info1_container">
+                <div class="info1">
+                    
+                   <a class="full_link" href="https://www.google.com">
+
+                    <i class="fa-solid fa-money-bill-wave"></i>
+                       <h2>Calcula tus prestamos</h2>
+                       <p>Lorem ipsum dolor sit amet 
+                           consectetur adipisicing elit. At dolor 
+                           voluptatum suscipit
+                            dignissimos totam aperiam ducimus
+                             natus libero, cumque vitae.</p>
+                       
+                       <p class="btn">Calcular prestamos</p>
+                   </a>
+                </div>
+            </div>
+
+           
+
+            <div class="main_info1_container">
+                <div class="info1">
+                    
+                   <a class="full_link" href="{% url 'login'%}">
+
+                    <i class="fa-solid fa-user-tie"></i>
+                       <h2>Afiliate a Nosotros</h2>
+                       <p>Lorem ipsum dolor sit amet 
+                           consectetur adipisicing elit. At dolor 
+                           voluptatum suscipit
+                            dignissimos totam aperiam ducimus
+                             natus libero, cumque vitae.</p>
+                       
+                       <p class="btn">Hacerse socio ahora</p>
+                   </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+</main>
+<section class="servicios">
+    <h2>Servicios</h2>
+    <h3>¿Como podemos ayudarte?</h3>
+    <div class="cards_container">
+        <div class="card">
+            
+                <img src="{% static '/IMG/ahorro1.jpg'%}" alt="imagen_servicio">
+
+            
+            <h3>Ahorros</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, odit!</p>
+            <a href="#">Ver mas...</a>
+        </div>
+        
+        <div class="card">
+            <div class="servicios_imagen_contenedor">
+                <img src="{% static '/IMG/prestamo1.jpg'%}" alt="imagen_servicio">
+    
+            </div>
+            <h3>Prestamos</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, odit!</p>
+            <a href="#">Ver mas...</a>
+        </div>
+        
+        
+        <div class="card">
+            <div class="servicios_imagen_contenedor">
+                <img src="{% static '/IMG/emprende.jpg'%}" alt="imagen_servicio">
+    
+            </div>
+            <h3>Programa Emprende</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, odit!</p>
+            <a href="#">Ver mas...</a>
+        </div>
+        
+    </div>
+</section>
+
+
+<section class="servicios">
+    <h2>Servicios</h2>
+    <h3>¿Como podemos ayudarte?</h3>
+    <div class="cards_container">
+        <div class="card2">
+            <div class="icon">
+                <i class="fa-solid fa-piggy-bank"></i>
+            </div>
+
+            <h3>Ahorros</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, odit!</p>
+            <a href="#">Ver mas...</a>
+        </div>
+        
+        <div class="card2">
+            <div class="icon">
+                <i class="fa-solid fa-sack-dollar"></i>
+            </div>
+            
+            <h3>Prestamos</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, odit!</p>
+            <a href="#">Ver mas...</a>
+        </div>
+        
+        
+        <div class="card2">
+            <div class="icon">
+                <i class="fa-solid fa-briefcase"></i>
+            </div>
+            
+            <h3>Programa Emprende</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, odit!</p>
+            <a href="#">Ver mas...</a>
+        </div>
+        
+    </div>
+</section>
+
+
+<section>
+    <div class="full_section_container">
+        <div class="text_container">
+            <h2> Bienvenido a CONABOM</h2>
+            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, aliquid vel consectetur doloremque mollitia eaque!</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, 
+                adipisicing elit. Architecto eveniet dolorum ab ea debitis, 
+                fuga corporis veritatis explicabo alias vero saepe? Similique eos 
+                voluptatum quo totam ipsam cupiditate ipsum pariatur? Vero quas enim non 
+                nesciunt beatae perspiciatis asperiores aperiam commodi distinctio.
+            </p>
+            <div class="text_ver">
+                <a href="#">Ver mas...</a>
+            </div>
+            
+        </div>
+        <div class="section_image_container">
+            <img src="{% static 'IMG/images/full_section_example_image.jpg' %}" alt="imagen_section_principal">
+        </div>
+        
+    </div>   
+
+</section>
+<section>
+    <div class="news_container">
+        <div class="news_title_main">
+            <a href=""><h2>ULTIMAS NOTICIAS</h2></a>
+        </div>
+        <div class="news_cards_container">
+            <div class="news">
+                <div class="news_image">
+                    <img src="{% static 'IMG/images/new-image.jpg' %}" alt="img_noticias">
+                </div>
+
+                <div class="news_title">
+                    <a href=""> <h3>titulo noticias</h3></a>
+                </div>
+
+                <div class="news_content">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                        Cumque fugiat excepturi quidem,
+                         inventore tenetur reprehenderit asperiores veniam quo, 
+                         esse blanditiis quisquam. Soluta dolorem error deleniti at provident a ea totam?</p>
+                </div>
+                <div class="news_continue">
+                    <a href="">seguir leyendo</a>
+                </div>
+
+            </div>
+            <div class="news">
+                <div class="news_image">
+                    <img src="{% static 'IMG/images/new-image.jpg' %}" alt="img_noticias">
+                </div>
+
+                <div class="news_title">
+                    <a href=""> <h3>titulo noticias</h3></a>
+                </div>
+
+                
+                <div class="news_content">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                        Cumque fugiat excepturi quidem,
+                         inventore tenetur reprehenderit asperiores veniam quo, 
+                         esse blanditiis quisquam. Soluta dolorem error deleniti at provident a ea totam?</p>
+                </div>
+                <div class="news_continue">
+                    <a href="">seguir leyendo</a>
+                </div>
+
+            </div>
+            <div class="news">
+                <div class="news_image">
+                    <img src="{% static 'IMG/images/new-image.jpg' %}" alt="img_noticias">
+                </div>
+
+                <div class="news_title">
+                    <a href=""> <h3>titulo noticias</h3></a>
+                </div>
+                
+                <div class="news_content">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                        Cumque fugiat excepturi quidem,
+                         inventore tenetur reprehenderit asperiores veniam quo, 
+                         esse blanditiis quisquam. Soluta dolorem error deleniti at provident a ea totam?
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia dignissimos quos porro ipsam architecto ullam debitis sapiente, non, sunt commodi animi laborum ex voluptatum excepturi recusandae repudiandae laboriosam. Quam, quae.</p>
+                </div>
+                <div class="news_continue">
+                    <a href="">seguir leyendo...</a>
+                </div>
+            </div>
+            
+            
+
+        </div>
+    </div>
+</section>
+
+
+
+
+{% endblock %}
+
+
+

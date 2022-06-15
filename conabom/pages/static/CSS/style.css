@@ -1001,16 +1001,17 @@ footer{
 
 /*slider*/
 @media screen and (max-width:900px){
-    .contenido-slider > img{
-        width: 250px;
-    }
+    
 
+    
     .contenido-slider > div{
         width: 40%;
+        position: relative;
+        
     }
 
     .contenido-slider h2{
-        font-size: 23px;
+        font-size: 18px;
     }
 }
 
@@ -1026,7 +1027,7 @@ footer{
     }
 
     .contenido-slider > div{
-        width: 80%;
+        width: 50%;
     }
 
 }

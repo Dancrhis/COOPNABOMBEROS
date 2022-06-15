@@ -1015,6 +1015,11 @@ footer{
 
 
 @media screen and (max-width:600px){
+    .login-container a {
+        
+        margin-right: 10px;
+        
+    }
     .contenido-slider{
        flex-direction: column-reverse;
     }

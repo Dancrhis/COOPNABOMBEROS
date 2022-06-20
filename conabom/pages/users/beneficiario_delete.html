@@ -1,0 +1,47 @@
+{% extends 'template.html'%}
+{% load static %}
+
+{% block nav %}
+
+    {% if user.is_authenticated %}
+    <div class="user_header_info">
+
+      <ul>
+        <li><h3>Usuario: {{ user.get_username }}</h3></li>
+        <li><a href="{% url 'logout'%}"><i class="fa-solid fa-arrow-right-from-bracket"></i> Cerrar sesion </i></a></li>
+      </ul>
+    </div>
+    
+  {% else %}
+    <li><a href="{% url 'login'%}?next={{request.path}}">Login</a></li>
+  {% endif %} 
+ </ul>
+</div>
+{% endblock %}
+
+{% block content%}
+<div class="user_page_body">
+  <div class="side-bar_container">
+    <div class="sidebar">
+      <ul>
+        <li><a href="">solicitar afiliacion</a></li>
+        <li><a href="">cuenta</a></li>
+      </ul>
+     
+    </div>
+  
+  </div>
+
+ 
+  <div class="user-content">
+    
+
+    <h2>eliminado con exito</h2>
+    <a href="{{ url 'userIndex'}}">Volver</a>
+      
+    
+  </div>
+    
+
+</div>
+{% endblock %}

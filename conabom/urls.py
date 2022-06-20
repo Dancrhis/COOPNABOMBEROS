@@ -9,5 +9,9 @@ urlpatterns = [
     path('user_index/', views.userIndex, name='userIndex'),
     path('register/', views.registro, name='register'),
     path('accounts/user_index/userAplication/', views.userApplication, name='userApplication'),
-    
+    path('accounts/user_index/userAplication2/', views.userApplication2, name='userApplication2'),
+    path('accounts/ logout/', views.logout, name='logout'),
+    path('user_index/delete_beneficiario/<int:pk>', views.beneficiario_delete, name='deleteBeneficiario'),
+    path('user_index/update_beneficiario/<int:pk>', views.beneficiario_update, name='updateBeneficiario'),
+    path('user_index/update_socio/<str:pk>', views.socio_update, name='updateSocio'),
 ]

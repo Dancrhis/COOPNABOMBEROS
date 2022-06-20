@@ -15,6 +15,7 @@
     <link rel="shortcut icon" href="{% static 'IMG/logo2.bmp'%}" type="image/x-icon">
     <link rel="stylesheet" href="{% static 'CSS/style.css' %}">
     <script src="https://kit.fontawesome.com/30bd34e812.js" crossorigin="anonymous"></script>
+    
 </head> 
 {% endblock %}
 {%  block body %}
@@ -29,10 +30,12 @@
                 <div class="logo-container">
                     <a href="/"><img class="logo" src="{% static 'IMG/logo.bmp'%}" alt="logo"></a>  
                 </div>
+                {% block nav %}
                 <div class="container_menu">
                     <ul class="menu-btn" id="menu-btn">
                         <li ><a href="#" onclick="mostrarMenu()"><i class="fa-solid fa-bars"></i></a></i></li> 
-                     </ul>
+                     </ul>`
+                     
                    
                     <nav class="menu" id="menu">
                         
@@ -88,16 +91,18 @@
                     <a href="{% url 'login'%}"><i class="fa-solid fa-right-to-bracket"></i> acceder</a>
 
                 </div>
+                {% endblock %}
             </div>
             <div>
             
         </div>
+        {% endblock %}
     
         </header>
-        {% block nav %}
         
-        {% endblock %}
-        {% endblock %}
+        
+        
+        
         {% block content %}
         
         {% endblock %}
@@ -150,10 +155,12 @@
             
     
         </footer>
+        
         {% endblock%}
     
         
     </div>
+    <script src="{% static 'JS/menu.js'%}"></script>
 </body>
 {% endblock %}
 </html>

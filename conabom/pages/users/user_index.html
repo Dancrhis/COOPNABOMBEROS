@@ -1,11 +1,17 @@
 {% extends 'template.html'%}
 {% load static %}
 
-{% block login %}
-<div>
+{% block nav %}
+
     {% if user.is_authenticated %}
-    <li>User: {{ user.get_username }}</li>
-    <li><a href="{% url 'logout'%}">Logout</a></li>
+    <div class="user_header_info">
+
+      <ul>
+        <li><h3>Usuario: {{ user.get_username }}</h3></li>
+        <li><a href="{% url 'logout'%}"><i class="fa-solid fa-arrow-right-from-bracket"></i> Cerrar sesion </i></a></li>
+      </ul>
+    </div>
+    
   {% else %}
     <li><a href="{% url 'login'%}?next={{request.path}}">Login</a></li>
   {% endif %} 
@@ -13,19 +19,193 @@
 </div>
 {% endblock %}
 {% block content%}
-<main>
-  <div class="sidebar">
-    <div class="user_section">
+<div class="user_page_body">
+  <div class="side-bar_container">
+    <div class="sidebar">
       <ul>
         <li><a href="{% url 'userApplication'%}">solicitar afiliacion</a></li>
+        <li><a href="{% url 'userApplication2'%}">agregar beneficiarios</a></li>
         <li><a href="">cuenta</a></li>
       </ul>
-      
+     
     </div>
-    
+  
   </div>
-    <div class="user-content">
+  <div class="user-content">
+    <table>
+      <tr>
+        <th><h3>Estado de la solicitud:{{user_info.estado}} </h3> </th>
+      </tr>
+      <tr>
+        <th>Informacion de usuario</th>
+      </tr>
+      <tr>
+        <td class="form_label">Primer nombre:</td>
+        <td >{{user_info.nombre1}}</td>
+        
+      </tr>
+      <tr>
+        <td class="form_label">Segundo nombre:</td>
+        <td >{{user_info.nombre2}}</td>
+      </tr>
+       <tr>
+        <td class="form_label">Primer apellido:</td>
+        <td >{{user_info.apellido1}}</td>
+        
+      </tr>
+      <tr>
+        <td class="form_label">Segundo apellido:</td>
+        <td >{{user_info.apellido2}}</td>
+      </tr>
       
-    </div>
-</main>
+      <tr>
+        <td class="form_label">sexo:</td>
+        <td >{{user_info.sexo}}</td><td></td>
+      </tr>
+      
+      <tr>
+        <td class="form_label">Fecha de nacimiento:</td>
+        <td >{{user_info.fechaNacimiento}}</td>
+      </tr>
+      <tr>
+        <td class="form_label">Nacionalidad:</td>
+        <td >{{user_info.nacionalidad}}</td>
+      </tr>
+      <tr>
+        <td class="form_label">Cedula:</td>
+        <td >{{user_info.cedula}}</td>
+      </tr>
+      
+      <tr>
+        <td class="form_label">Estado Civil:</td>
+        <td >{{user_info.estadoCivil}}</td>
+      </tr>
+      
+      
+      <tr>
+        <td class="form_label">Provincia:</td>
+        <td >{{user_info.provincia}}</td>
+        
+      </tr>
+      <tr>
+        <td class="form_label">Municipio:</td>
+        <td >{{user_info.municipio}}</td>
+      </tr>
+      <tr>
+        <td class="form_label">Sector:</td>
+        <td >{{user_info.sector}}</td>
+     
+      </tr>
+      <tr>
+        <td class="form_label">Celular:</td>
+        <td >{{user_info.celular}}</td>
+        
+      </tr>
+      <tr>
+        <td class="form_label">Telefono:</td>
+        <td >{{user_info.telefono}}</td>
+      </tr>
+      <th class="form_subtitle" colspan="2"><h3>Informacion Laboral:</h3></th>
+      <tr>
+        <td class="form_label">lugar de Trabajo:</td>
+        <td >{{user_info.lugarTrabajo}}</td>
+        
+      </tr>
+      <tr>
+        <td class="form_label">Telefono de lugar de trabajo:</td>
+        <td >{{user_info.telefonoLugarTrabajo}}</td>
+        
+      </tr>
+      <tr>
+        <td class="form_label">Cargo que desempeña:</td>
+        <td >{{user_info.cargo}}</td>
+        
+      </tr>
+      <tr>
+        <th class="form_subtitle" colspan="2"><h3>Informacion Instucion de Emergencia a la que pertenece:</h3></th>
+      </tr>
+      <tr>
+        <td class="form_label" colspan="2">Instucion de Atencion a Emergencia:</td>
+        
+      </tr>
+      <tr>
+        <td colspan="2">{{user_info.institucionAtencionEmergencia}}</td>
+      </tr>
+      <tr>
+        <td class="form_label">De:</td><td >{{user_info.ubicacion}}</td>
+      </tr>
+      <tr>
+        <th class="form_subtitle" colspan="2"><h3>Aporte a la Cooperativa:</h3></th>
+        
+      </tr>
+      <tr >
+        <td class="aportes_info" colspan="2">la cantidad fija mensual de RD$: {{user_info.aporte}}
+        </td>
+        
+      </tr>
+      <a href="{% url 'updateSocio' user_info.usuario %}"> Editar info</a>
+        
+      
+    </table>
+    
+      
+    
+    <table>
+      
+      <th><h3>Informacion de Beneficiarios</h3></th>
+    
+      {% for beneficiario in beneficiario_info %}
+  
+      <tr>
+        <td class="form_label">Nombre:</td>
+        <td >{{beneficiario.nombre1}}</td>
+      </tr>
+      <tr>
+        <td class="form_label">Segundo Nombre:</td>
+        <td >{{beneficiario.nombre2}}</td>
+      </tr>
+      <tr>
+        <td class="form_label">Apellido:</td>
+        <td >{{beneficiario.apellido1}}</td>
+      </tr>
+      <tr>
+        <td class="form_label">Segundo apellido:</td>
+        <td >{{beneficiario.apellido2}}</td>
+      </tr>
+      <tr>
+        <td class="form_label">Cedula:</td>
+        <td >{{beneficiario.cedula}}</td>
+        
+      </tr>
+      <tr>
+        <td class="form_label">Parentezco</td>
+        <td >{{beneficiario.parentezco}}</td>
+      </tr>
+      <tr>
+        <td class="form_label">Telefeono:</td>
+        <td >{{beneficiario.telefono}}</td>
+      </tr>
+      <tr>
+        <td class="form_label">Porcentaje</td>
+        <td >{{beneficiario.porcentaje}}%</td>
+      </tr>
+      <tr>
+        <td><a href="{% url 'deleteBeneficiario' beneficiario.id %}">eliminar beneficiario</a> </td>
+        <td><a href="{% url 'updateBeneficiario' beneficiario.id %}">editar beneficiario</a></td>
+      </tr>
+    </table>
+    
+    <hr>
+    
+
+
+  {% endfor%}
+    
+ 
+
+ 
+  
+    
+
+</div>
 {% endblock %}

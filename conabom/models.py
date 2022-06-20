@@ -1,6 +1,7 @@
 
 from datetime import datetime
 from django.db import models
+from django.utils import timezone
 from django.contrib.auth.models import User
 
 
@@ -10,18 +11,18 @@ from django.contrib.auth.models import User
 
 class Socio(models.Model):
     
-    fechaSolicitud=models.DateTimeField(default=datetime.now())
-    usuario=models.ForeignKey(User, on_delete=models.CASCADE)
-    estado=models.CharField(max_length=50, default="solicitud")
+    fechaSolicitud=models.DateTimeField(default=timezone.now)
+    usuario=models.OneToOneField(User,to_field='username', on_delete=models.CASCADE)
+    estado=models.CharField(max_length=50, default="en proceso")
     fechaValidacion=models.DateTimeField(null=True)
     acta=models.CharField(max_length=100, null=True)
     
 
     cedula=models.IntegerField(primary_key=True)
     nombre1=models.CharField(max_length=100, null=False)
-    nombre2=models.CharField(max_length=100, null=True)
+    nombre2=models.CharField(max_length=100, null=True, blank=True)
     apellido1=models.CharField(max_length=100, null=False)
-    apellido2=models.CharField(max_length=100, null=True)
+    apellido2=models.CharField(max_length=100, null=True, blank=True)
     fechaNacimiento=models.DateField()
     nacionalidad=models.CharField(max_length=100)
     sexo=models.CharField(max_length=1)
@@ -29,21 +30,25 @@ class Socio(models.Model):
     municipio=models.CharField(max_length=100)
     sector=models.CharField(max_length=100)
     estadoCivil=models.CharField(max_length=100)
-    telefono=models.IntegerField()
-    celular=models.IntegerField()
+    telefono=models.IntegerField(null=True, blank=True)
+    celular=models.IntegerField(null=True, blank=True)
     lugarTrabajo=models.CharField(max_length=100)
     cargo=models.CharField(max_length=100)
     telefonoLugarTrabajo=models.IntegerField()
+    institucionAtencionEmergencia=models.CharField(max_length=400, null=True)
+    ubicacion=models.CharField(max_length=400, null=True)
+    aporte=models.IntegerField(default=0)
 
 class Beneficiario(models.Model):
-    afiliado=models.ForeignKey(Socio, on_delete=models.CASCADE)
+    afiliado=models.ForeignKey(User,to_field='username', on_delete=models.CASCADE)
     cedula=models.IntegerField(null=False)
     nombre1=models.CharField(max_length=100, null=False)
-    nombre2=models.CharField(max_length=100, null=True)
+    nombre2=models.CharField(max_length=100, null=True,blank=True)
     apellido1=models.CharField(max_length=100, null=False)
-    apellido2=models.CharField(max_length=100, null=True)
+    apellido2=models.CharField(max_length=100, null=True,blank=True)
     parentezco=models.CharField(max_length=50)
     porcentaje=models.IntegerField()
+    telefono=models.IntegerField(default=8099999999)
 
 
 class Slider(models.Model):

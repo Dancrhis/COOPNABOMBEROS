@@ -23,10 +23,19 @@
   <div class="side-bar_container">
     <div class="sidebar">
       <ul>
-        <li><a href="{% url 'userIndex'%}">inicio</a></li>
-        <li><a href="{% url 'userApplication'%}">solicitar afiliacion</a></li>
-        <li><a href="{% url 'userApplication2'%}">agregar beneficiarios</a></li>
-        <li><a href="">cuenta</a></li>
+        <li><h4>opciones de usuario:</h4></li>
+        <ul>
+          <li><a href="{% url 'userIndex'%}">inicio</a></li>
+          <li><a href="{% url 'userApplication'%}">solicitar afiliacion</a></li>
+          <li><a href="{% url 'userApplication2'%}">agregar beneficiarios</a></li>
+        </ul>
+        <li><h4>cuenta</h4></a></li>
+        <ul>
+          <li><a href="{% url 'userIndex'%}">inicio</a></li>
+          <li><a href="{% url 'userApplication'%}">solicitar afiliacion</a></li>
+          <li><a href="{% url 'userApplication2'%}">agregar beneficiarios</a></li>
+        </ul>
+
       </ul>
      
     </div>
@@ -143,15 +152,17 @@
           
         </tr>
         <tr >
-          <td class="aportes_info" colspan="2">la cantidad fija mensual de RD$: {{user_info.aporte}}
+          <td class="aportes_info" colspan="2">la cantidad fija mensual de RD$: {{info.aporte}}
           </td>
           
         </tr>
         
           
       </table>
-      <div>
-        <a href="{% url 'updateSocio' user.get_username %}"> Editar info</a>
+      <div class="btn-container">
+        <div class="btn-info">
+          <a href="{% url 'updateSocio' user.get_username %}"> Editar info</a>
+        </div>
       </div>
     </div>
     {% endfor%}
@@ -198,11 +209,12 @@
         </tr>
         
       </table>
-        <div>
-          <div >
+      <hr>
+        <div class="btn-container">
+          <div class="btn-info" >
               <a href="{% url 'deleteBeneficiario' beneficiario.id %}">eliminar beneficiario</a>
           </div>
-          <div>
+          <div class="btn-info">
               <a href="{% url 'updateBeneficiario' beneficiario.id %}">editar beneficiario</a>
           </div>
             

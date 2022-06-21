@@ -7,6 +7,17 @@
   <div class="marco_contenido">
     <div class="form_logo_container">
       <img src="{% static 'IMG/logo2.bmp'%}" alt="">
+      {% if form.errors %}
+      <div class="form_errors">
+      <p>hubo errores al completar el formulario:</p>
+          {% for field in form %}
+          
+              {% for error in field.errors %}
+                  <p class="error">{{field.label}}{{ error|escape }}</p>
+               {% endfor %}
+            {% endfor %}
+      </div>      
+      {% endif %}
     </div>
     <div class="form_container">
 
@@ -58,6 +69,7 @@
         <a href="{% url 'login' %}"> logearse</a>
         <a href="{% url 'index' %}"> Inicio</a> 
       </div>
+      
       
     </div>
      

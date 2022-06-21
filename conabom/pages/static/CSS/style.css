@@ -951,6 +951,7 @@ nav ul li ul li a:hover{
 .user_page_body{
     
     display: flex;
+    flex-direction: row;
 }
 .user_page_body main{
     align-items: stretch;

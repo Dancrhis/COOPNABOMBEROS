@@ -35,11 +35,16 @@ def registro(request):
     if request.method=="POST":
         formulario= CustomUserCreationForm(data=request.POST)
         if formulario.is_valid():
+            try:
+
+                user = formulario.save()
+                login(request, user)
+                messages.success(request, "te has registrado correctamente")
+                return redirect(to='userIndex')
+            except:
+                return render(request,'register',{'msj':'el nombre de usuario ya existe', 'form':formulario})
+
             
-            user = formulario.save()
-            login(request, user)
-            messages.success(request, "te has registrado correctamente")
-            return redirect(to='userIndex')
         data["form"]=formulario
     
     
@@ -48,8 +53,9 @@ def registro(request):
 
 @login_required
 def userIndex(request):
+    
     data={
-        'user_info':Socio.objects.get(usuario=request.user),
+        'user_info':Socio.objects.filter(usuario=request.user),
         'beneficiario_info': Beneficiario.objects.filter(afiliado=request.user)
     }
     return render(request, "users/user_index.html", data) 

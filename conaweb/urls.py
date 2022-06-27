@@ -22,6 +22,7 @@ urlpatterns = [
     path('', include("conabom.urls")),
     path('accounts/', include('django.contrib.auth.urls')),
     
+    
 
     
 ]

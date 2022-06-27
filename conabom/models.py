@@ -10,12 +10,14 @@ from django.contrib.auth.models import User
 
 
 class Socio(models.Model):
-    
+    ESTADOS=[("en proceso","en proceso"),
+            ("aprobada","aprobada"),
+            ("rechazada","rechazada"),]
     fechaSolicitud=models.DateTimeField(default=timezone.now)
     usuario=models.OneToOneField(User,to_field='username', on_delete=models.CASCADE)
-    estado=models.CharField(max_length=50, default="en proceso")
-    fechaValidacion=models.DateTimeField(null=True)
-    acta=models.CharField(max_length=100, null=True)
+    estado=models.CharField(max_length=50, default="en proceso", choices=ESTADOS)
+    fechaValidacion=models.DateTimeField(null=True,default=timezone.now)
+    acta=models.CharField(max_length=100, null=True, default="ninguna")
     
 
     cedula=models.IntegerField(primary_key=True)
@@ -52,10 +54,22 @@ class Beneficiario(models.Model):
 
 
 class Slider(models.Model):
-    image= models.ImageField(upload_to='static/IMG/images/%y/%m/%d')
+    image= models.ImageField( null=True,blank=True)
     title = models.CharField(max_length=150)
     sub_title = models.CharField(max_length=100)
 
     def __str__(self):
         return self.title
+
+class Noticia(models.Model):
+    foto=models.ImageField( null=True,blank=True)
+    titulo=models.CharField(default="titulo", max_length=300,blank=True, editable=True)
+    contenido=models.CharField(default="detalles", max_length=5000, blank=True)
+    fechaPublicacion=models.DateTimeField(default=timezone.now)
+
+class Evento(models.Model):
+    foto=models.ImageField(null=True,blank=True)
+    titulo=models.CharField(default="titulo", max_length=300,blank=True, editable=True)
+    contenido=models.CharField(default="detalles", max_length=5000, blank=True)
+    fechaPublicacion=models.DateTimeField(default=timezone.now)
 

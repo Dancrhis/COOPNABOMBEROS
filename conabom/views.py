@@ -1,5 +1,5 @@
 
-from shutil import register_unpack_format
+
 from conabom.forms import BeneficiarioForms, SocioForm
 from django.contrib import messages
 from django.shortcuts import redirect, render
@@ -8,7 +8,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login
 from conabom.forms import CustomUserCreationForm
-from conabom.models import Beneficiario, Slider, Socio
+from conabom.models import Beneficiario, Slider, Socio, Noticia, Evento
+from django.core.paginator import Paginator
 
 # Create your views here.
 
@@ -49,6 +50,16 @@ def registro(request):
     
     
     return render(request, "registration/register.html", data )
+
+def noticiasIndex(request):
+    noticias =Noticia.objects.all()
+    noticias_page=Paginator(noticias,10)
+    page_number = request.GET.get('page')
+    page_obj= noticias_page.get_page(page_number)
+    context={
+        'page_obj': page_obj,
+    }
+    return render(request,"noticias.html", context)
 
 
 @login_required

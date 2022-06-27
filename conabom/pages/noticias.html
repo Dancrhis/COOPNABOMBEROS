@@ -4,6 +4,51 @@
 
 {% block content%}
 <main>
-    <p>contenido principal</p>
+    <div class="header_container">
+      <h1>NOTICIAS</h1>  
+    </div>
+    {% for noticia in page_obj%}
+        <div class="noticia_container">
+            <div class="news_img_view">
+                <img src="{% static 'noticia.foto.url' %}" alt="">
+                <p>{{noticia.foto.url}}</p>
+
+            </div>
+            <div class="noticias_contenido_preview">
+
+                <div class="noticias_ver_titulo">
+                    <h3>{{noticia.titulo}}</h3>
+    
+                </div>
+                <div class="noticias_ver_detalles">
+                    <a href="">Ver mas detalles </a>
+
+                </div>
+            </div>
+
+        </div>
+
+
+
+    {% endfor%}
+    <div class="pagination">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?page=1">&laquo; Inicio</a>
+                <a href="?page={{ page_obj.previous_page_number }}">Anterior</a>
+            {% endif %}
+    
+            <span class="current">
+                Pagina {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}.
+            </span>
+    
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">siguiente</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">Ultima &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+
+    
 </main>
 {% endblock %}

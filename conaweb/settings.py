@@ -139,8 +139,8 @@ LOGIN_REDIRECT_URL = 'userIndex'
 LOGOUT_REDIRECT_URL = 'login'
 LOGIN_URL='login'
 
-MEDIA_URL = ''
-MEDIA_ROOT=os.path.join(BASE_DIR,'pages/')
+MEDIA_URL = "/media/"
+MEDIA_ROOT=os.path.join(BASE_DIR,"media/")
 
 # Heroku: Update database configuration from $DATABASE_URL.
 import dj_database_url

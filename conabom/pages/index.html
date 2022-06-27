@@ -219,7 +219,25 @@
 <section>
     <div class="news_container">
         <div class="news_title_main">
-            <a href=""><h2>ULTIMAS NOTICIAS</h2></a>
+            <a href=" {% url 'noticias'%}"><h2>ULTIMAS NOTICIAS</h2></a>
+        </div>
+        <div class="main_new_container">
+            <div class="main_new_image">
+                <img src="{% static 'IMG/images/new-image.jpg' %}" alt="">
+            </div>
+            <div class="main_new_title">
+                <a href=""><h2>titulo</h2></a>
+            </div>
+            <div class="main_new_details">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                     Nisi quas voluptatibus ducimus optio ad repudiandae voluptates 
+                     ut explicabo! Autem omnis maiores, minus dicta quae fuga error 
+                     assumenda laboriosam optio labore?</p>
+            </div>
+            <div class="news_continue">
+                <a href="">seguir leyendo</a>
+            </div>
+            
         </div>
         <div class="news_cards_container">
             <div class="news">

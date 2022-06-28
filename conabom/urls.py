@@ -19,6 +19,5 @@ urlpatterns = [
     path('user_index/update_socio/<str:pk>', views.socio_update, name='updateSocio'),
     
 ]
-if settings.DEBUG:
-        urlpatterns += static(settings.MEDIA_URL,
-                              document_root=settings.MEDIA_ROOT)
+
+        

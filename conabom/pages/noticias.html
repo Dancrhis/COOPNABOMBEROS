@@ -10,7 +10,7 @@
     {% for noticia in page_obj%}
         <div class="noticia_container">
             <div class="news_img_view">
-                <img src="{% static 'noticia.foto.url' %}" alt="">
+                <img src="{% static {{noticia.foto.url}} " alt="">
                 <p>{{noticia.foto.url}}</p>
 
             </div>

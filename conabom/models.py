@@ -64,12 +64,12 @@ class Slider(models.Model):
 class Noticia(models.Model):
     foto=models.ImageField( null=True,blank=True)
     titulo=models.CharField(default="titulo", max_length=300,blank=True, editable=True)
-    contenido=models.CharField(default="detalles", max_length=5000, blank=True)
+    contenido=models.TextField(default="detalles",  blank=True)
     fechaPublicacion=models.DateTimeField(default=timezone.now)
 
 class Evento(models.Model):
     foto=models.ImageField(null=True,blank=True)
     titulo=models.CharField(default="titulo", max_length=300,blank=True, editable=True)
-    contenido=models.CharField(default="detalles", max_length=5000, blank=True)
+    contenido=models.TextField(default="detalles",  blank=True)
     fechaPublicacion=models.DateTimeField(default=timezone.now)
 

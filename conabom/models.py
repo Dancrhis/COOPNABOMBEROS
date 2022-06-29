@@ -73,3 +73,4 @@ class Evento(models.Model):
     contenido=models.TextField(default="detalles",  blank=True)
     fechaPublicacion=models.DateTimeField(default=timezone.now)
 
+

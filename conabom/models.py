@@ -54,7 +54,7 @@ class Beneficiario(models.Model):
 
 
 class Slider(models.Model):
-    image= models.ImageField( null=True,blank=True)
+    image= models.ImageField( upload_to="images/%y%m%d",null=True,blank=True)
     title = models.CharField(max_length=150)
     sub_title = models.CharField(max_length=100)
 
@@ -62,13 +62,13 @@ class Slider(models.Model):
         return self.title
 
 class Noticia(models.Model):
-    foto=models.ImageField( null=True,blank=True)
+    foto=models.ImageField( upload_to="images/%y%m%d",null=True,blank=True)
     titulo=models.CharField(default="titulo", max_length=300,blank=True, editable=True)
     contenido=models.TextField(default="detalles",  blank=True)
     fechaPublicacion=models.DateTimeField(default=timezone.now)
 
 class Evento(models.Model):
-    foto=models.ImageField(null=True,blank=True)
+    foto=models.ImageField(upload_to="images/%y%m%d",null=True,blank=True)
     titulo=models.CharField(default="titulo", max_length=300,blank=True, editable=True)
     contenido=models.TextField(default="detalles",  blank=True)
     fechaPublicacion=models.DateTimeField(default=timezone.now)

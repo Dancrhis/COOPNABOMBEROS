@@ -4,28 +4,32 @@
 
 {% block content%}
 <main>
-    <div class="header_container">
+    <div class="news_header_container" >
       <h1>NOTICIAS</h1>  
     </div>
     {% for noticia in page_obj%}
         <div class="noticia_container">
             <div class="news_img_view">
                 <img src={{noticia.foto.url}} alt="">
-                <p>{{noticia.foto.url}}</p>
+                
 
             </div>
             <div class="noticias_contenido_preview">
 
                 <div class="noticias_ver_titulo">
-                    <h3>{{noticia.titulo}}</h3>
+                    <a href=""><h3>{{noticia.titulo}}</h3></a>
+                    <div>
+                        <p>fecha de publicacion: {{noticia.fechaPublicacion}}</p>
+                    </div>
+                    <div><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non, voluptatibus voluptatem incidunt, laboriosam dignissimos quas tempore unde illum dicta alias iusto, dolor ut adipisci quasi accusantium iste excepturi doloremque nostrum?</p></div>
     
                 </div>
-                <div class="noticias_ver_detalles">
+                <div class="news_continue">
                     <a href="">Ver mas detalles </a>
 
                 </div>
             </div>
-
+            
         </div>
 
 

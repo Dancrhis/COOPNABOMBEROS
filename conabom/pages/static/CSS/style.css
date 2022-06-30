@@ -989,8 +989,47 @@ nav ul li ul li a:hover{
     padding: 10px;
     border-radius: 5px;
 }
+/* noticias*/
+/* noticias header */
+.news_header_container{
+    display: flex;
+    
+    width: 100%;
+    min-height: 150px;
+    align-items: center;
+    background-image: url('/static/IMG/images/news-bg.jpg') ;
+    background-repeat: no-repeat;
+    background-size: cover;
 
+}
+.news_header_container h1{
+    display: block;
+    color: #fff;
+}
+.noticia_container{
+    margin-left: 30px;
+    display: flex;
+    border: solid #7a7a7a 2px;
+    border-radius: 10px;
+    max-width: 820px;
+    max-height: 200px;
+    box-shadow:  0 12px 16px rgba(0,0,0,0.2); 
+}
 
+.news_img_view{
+    width: 300px;
+    min-height: 200px;
+    
+}
+
+.news_img_view img{
+    width: 300px;
+    height: 100%;
+    border-radius: 10px;
+}
+.noticias_contenido_preview{
+    margin-left: 20px;
+}
 
 
 /*sidebar-users*/

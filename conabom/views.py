@@ -16,9 +16,12 @@ from django.core.paginator import Paginator
 #index
 def inicio(request):
     
-    obj = Slider.objects.all()
+    obj = Evento.objects.all().order_by('fechaPublicacion')
     context={ 
-        'obj':obj 
+        'evento1':obj[0],
+        'evento2':obj[1],
+        'evento3':obj[2],
+
         }
 
 

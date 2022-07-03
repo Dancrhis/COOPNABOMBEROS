@@ -16,12 +16,16 @@ from django.core.paginator import Paginator
 #index
 def inicio(request):
     
-    obj = Evento.objects.all().order_by('fechaPublicacion')
+    obj = Evento.objects.all().order_by('-fechaPublicacion')
+    obj2 = Noticia.objects.all().order_by('-fechaPublicacion')
     context={ 
         'evento1':obj[0],
         'evento2':obj[1],
         'evento3':obj[2],
-
+        'noticia1':obj2[0],
+        'noticia2':obj2[1],
+        'noticia3':obj2[2],
+        'noticia4':obj2[3],
         }
 
 
@@ -55,7 +59,7 @@ def registro(request):
     return render(request, "registration/register.html", data )
 
 def noticiasIndex(request):
-    noticias =Noticia.objects.all()
+    noticias =Noticia.objects.all().order_by("-fechaPublicacion")
     noticias_page=Paginator(noticias,10)
     page_number = request.GET.get('page')
     page_obj= noticias_page.get_page(page_number)

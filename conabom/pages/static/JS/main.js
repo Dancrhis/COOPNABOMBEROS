@@ -2,7 +2,7 @@ let slider = document.querySelector(".slider-contenedor")
 let sliderIndividual = document.querySelectorAll(".contenido-slider")
 let contador = 1;
 let width = sliderIndividual[0].clientWidth;
-let intervalo = 5000;
+let intervalo = 10000;
 
 window.addEventListener("resize", function(){
     width = sliderIndividual[0].clientWidth;
@@ -19,12 +19,12 @@ function slides(){
     slider.style.transition = "transform .8s";
     contador++;
 
-    if(contador == sliderIndividual.length){
+    if(contador == sliderIndividual.length+1){
         setTimeout(function(){
             slider.style.transform = "translate(0px)";
             slider.style.transition = "transform 0s";
             contador=1;
-        },1500)
+        },2000)
     }
 }
 

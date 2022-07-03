@@ -5,34 +5,33 @@
 {% block content%}
 <style>
     #slide1{
-        background-image: url({{evento1.image.url}});
+        background-image: url({{evento1.foto.url}});
     }
     #slide2{
-        background-image: url({{evento2.image.url}});
+        background-image: url({{evento2.foto.url}});
     }
     #slide3{
-        background-image: url({{evento3.image.url}});
+        background-image: url({{evento3.foto.url}});
     }
     #slide4{
-        background-image: url({{evento1.image.url}});
+        background-image: url({{evento1.foto.url}});
     }
 </style>
 <main>
     <div class="banner">
         <div class="contenedor">
             <div class="slider-contenedor">
+                
                 <section class="contenido-slider" id="slide1" >
                     <div >
-                        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima ipsa ipsam aliquam natus quidem
-                            sed. Quos cupiditate id delectus est.</h2>
+                        <h2>{{evento1.titulo}}</h2>
                         <a href="#">Ver mas...</a>
                     </div>
-                   
+                
                 </section>
                 <section class="contenido-slider" id="slide2">
                     <div >
-                        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima ipsa ipsam aliquam natus quidem
-                            sed. Quos cupiditate id delectus est.</h2>
+                        <h2>{{evento2.titulo}}</h2>
                         <a href="#">Ver mas...</a>
                     </div>
                     
@@ -40,8 +39,7 @@
                 </section>
             <section class="contenido-slider" id="slide3">
                 <div>
-                    <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima ipsa ipsam aliquam natus quidem
-                        sed. Quos cupiditate id delectus est.</h2>
+                    <h2>{{evento3.titulo}}</h2>
                     <a href="#">Ver mas...</a>
                 </div>
                 <script src="{% static 'JS/main.js'%}"></script>
@@ -49,8 +47,7 @@
             </section>
             <section class="contenido-slider" id="slide4">
                 <div>
-                    <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima ipsa ipsam aliquam natus quidem
-                        sed. Quos cupiditate id delectus est.</h2>
+                    <h2>{{evento1.titulo}}</h2>
                     <a href="#">Ver mas...</a>
                 </div>
                 
@@ -106,46 +103,6 @@
     
     
 </main>
-<section class="servicios">
-    <div class="servicios_inner">
-
-        <h2>Servicios</h2>
-        <h3>¿Como podemos ayudarte?</h3>
-        <div class="cards_container">
-            <div class="card">
-                
-                    <img src="{% static '/IMG/ahorro1.jpg'%}" alt="imagen_servicio">
-    
-                
-                <h3>Ahorros</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, odit!</p>
-                <a href="#">Ver mas...</a>
-            </div>
-            
-            <div class="card">
-                <div class="servicios_imagen_contenedor">
-                    <img src="{% static '/IMG/prestamo1.jpg'%}" alt="imagen_servicio">
-        
-                </div>
-                <h3>Prestamos</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, odit!</p>
-                <a href="#">Ver mas...</a>
-            </div>
-            
-            
-            <div class="card">
-                <div class="servicios_imagen_contenedor">
-                    <img src="{% static '/IMG/emprende.jpg'%}" alt="imagen_servicio">
-        
-                </div>
-                <h3>Programa Emprende</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, odit!</p>
-                <a href="#">Ver mas...</a>
-            </div>
-            
-        </div>
-    </div>
-</section>
 
 
 <section class="servicios">
@@ -184,6 +141,8 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, odit!</p>
                 <a href="#">Ver mas...</a>
             </div>
+
+            
             
         </div>
     </div>
@@ -195,14 +154,13 @@
 
         <div class="full_section_container">
             <div class="text_container">
-                <h2> Bienvenido a CONABOM</h2>
+                <h2> Quienes Somos</h2>
                 <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, aliquid vel consectetur doloremque mollitia eaque!</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, 
-                    adipisicing elit. Architecto eveniet dolorum ab ea debitis, 
-                    fuga corporis veritatis explicabo alias vero saepe? Similique eos 
-                    voluptatum quo totam ipsam cupiditate ipsum pariatur? Vero quas enim non 
-                    nesciunt beatae perspiciatis asperiores aperiam commodi distinctio.
+                <p>Para la Cooperativa San José, es trascendental que nuestros asociados se sientan a gusto con el trato que reciben de nuestros colaboradores. Satisfacer sus necesidades es nuestra  prioridad, porque forman parte de nosotros.
+                    Uno de nuestros objetivos es lograr una gestión administrativa y financiera eficiente, en donde las personas de menos recursos tengan la oportunidad de acceder a servicios financieros confiables y competitivos, con el fin de mejorar su calidad de vida, contribuyendo con su educación, desarrollo económico y social.    
+                    
                 </p>
+                <p> Gracias por elegirnos y confiar en nosotros, bienvenido(a) a Tú Cooperativa.</p>
                 <div class="text_ver">
                     <a href="#">Ver mas...</a>
                 </div>
@@ -221,39 +179,33 @@
         <div class="news_title_main">
             <a href=" {% url 'noticias'%}"><h2>ULTIMAS NOTICIAS</h2></a>
         </div>
-        <div class="main_new_container">
-            <div class="main_new_image">
-                <img src="{% static 'IMG/images/new-image.jpg' %}" alt="">
-            </div>
-            <div class="main_new_title">
-                <a href=""><h2>titulo</h2></a>
-            </div>
-            <div class="main_new_details">
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                     Nisi quas voluptatibus ducimus optio ad repudiandae voluptates 
-                     ut explicabo! Autem omnis maiores, minus dicta quae fuga error 
-                     assumenda laboriosam optio labore?</p>
-            </div>
-            <div class="news_continue">
-                <a href="">seguir leyendo</a>
+        <div class="main_new_container" style="background-image: url({{noticia1.foto.url}});">
+            <div class="main_new_inner">
+                
+                <div class="main_new_title">
+                    <a href=""><h2>{{noticia1.titulo}}</h2></a>
+                </div>
+                <div class="main_new_details">
+                    <p class="detalles">{{noticia1.contenido|truncatewords:50}}</p>
+                </div>
+                <div class="news_continue">
+                    <a href="">seguir leyendo...</a>
+                </div>
             </div>
             
         </div>
         <div class="news_cards_container">
             <div class="news">
                 <div class="news_image">
-                    <img src="{% static 'IMG/images/new-image.jpg' %}" alt="img_noticias">
+                    <img src={{noticia2.foto.url}} alt="img_noticias">
                 </div>
 
                 <div class="news_title">
-                    <a href=""> <h3>titulo noticias</h3></a>
+                    <a href=""> <h3>{{noticia2.titulo}}</h3></a>
                 </div>
 
                 <div class="news_content">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                        Cumque fugiat excepturi quidem,
-                         inventore tenetur reprehenderit asperiores veniam quo, 
-                         esse blanditiis quisquam. Soluta dolorem error deleniti at provident a ea totam?</p>
+                    <p>{{noticia2.contenido|truncatewords:50}}</p>
                 </div>
                 <div class="news_continue">
                     <a href="">seguir leyendo</a>
@@ -262,19 +214,16 @@
             </div>
             <div class="news">
                 <div class="news_image">
-                    <img src="{% static 'IMG/images/new-image.jpg' %}" alt="img_noticias">
+                    <img src={{noticia3.foto.url}} alt="img_noticias">
                 </div>
 
                 <div class="news_title">
-                    <a href=""> <h3>titulo noticias</h3></a>
+                    <a href=""> <h3>{{noticia3.titulo}}</h3></a>
                 </div>
 
                 
                 <div class="news_content">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                        Cumque fugiat excepturi quidem,
-                         inventore tenetur reprehenderit asperiores veniam quo, 
-                         esse blanditiis quisquam. Soluta dolorem error deleniti at provident a ea totam?</p>
+                    <p>{{noticia3.contenido|truncatewords:50}}</p>
                 </div>
                 <div class="news_continue">
                     <a href="">seguir leyendo</a>
@@ -283,23 +232,21 @@
             </div>
             <div class="news">
                 <div class="news_image">
-                    <img src="{% static 'IMG/images/new-image.jpg' %}" alt="img_noticias">
+                    <img src={{noticia4.foto.url}} alt="img_noticias">
                 </div>
 
                 <div class="news_title">
-                    <a href=""> <h3>titulo noticias</h3></a>
+                    <a href=""> <h3>{{noticia4.titulo}}</h3></a>
                 </div>
+
                 
                 <div class="news_content">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                        Cumque fugiat excepturi quidem,
-                         inventore tenetur reprehenderit asperiores veniam quo, 
-                         esse blanditiis quisquam. Soluta dolorem error deleniti at provident a ea totam?
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia dignissimos quos porro ipsam architecto ullam debitis sapiente, non, sunt commodi animi laborum ex voluptatum excepturi recusandae repudiandae laboriosam. Quam, quae.</p>
+                    <p>{{noticia4.contenido|truncatewords:50}}</p>
                 </div>
                 <div class="news_continue">
-                    <a href="">seguir leyendo...</a>
+                    <a href="">seguir leyendo</a>
                 </div>
+
             </div>
             
             

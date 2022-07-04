@@ -1,0 +1,75 @@
+{% extends 'template.html'%}
+{% load static %}
+
+
+{% block content%}
+<main>
+    <div class="noticias_titulo">
+        <h1>Noticias</h1>
+        <div class="page_map">
+            <a href="{% url 'index'%}"><i class="fa-solid fa-house"></i>Inicio</a><i class="fa-solid fa-angle-right"></i><a href="{% url 'noticias'%}">Noticias</a><i class="fa-solid fa-angle-right"></i><a href="">{{noticia.titulo}}</a>
+        </div>
+        
+    </div>
+    <div class="parallax_imagen_noticia">
+        <img src={{noticia.foto.url}} alt="">
+    </div>
+    <div class="noticias_body_content">
+
+        <div class="noticia-detalles_main_container">
+    
+            <div class="noticia-detalles_container">
+        
+                <div class="subtitulo_noticia-detalles">
+                    <h2>{{noticia.titulo}}</h2>
+                </div>
+                <div class="noticia-detalles_contenido">
+                    <p>{{noticia.fechaPublicacion}}</p>
+               
+                </div>
+            
+                <div class="noticia-detalles_contenido">
+                    <p>{{noticia.contenido|linebreaksbr}}</p>
+               
+                </div>
+    
+                
+            </div>      
+                <div class="more_info">
+                    <div class="more_info_content">
+                        <div class="more_info_section">
+        
+                            <ul>
+                                <li><h3>Mas Informaciones:</h3></li>
+                                <li><a href="">Historia</a></li>
+                                <li><a href="">Vision</a></li>
+                                <li><a href="">Valores</a></li>
+                                <li><a href="">Mensaje del Presidente</a></li>
+                            </ul>
+                        </div>
+                        <div class="more_info_section">
+        
+                            <ul>
+                                <li><h3>Otras Informaciones:</h3></li>
+                                <li><a href="{% url 'noticias'%}">Noticias</a></li>
+                                <li><a href="">Eventos</a></li>
+                                <li><a href="">Valores</a></li>
+                                <li><a href="">Mensaje del Presidente</a></li>
+                            </ul>
+                        </div>
+                        
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="link_volver">
+
+        <a href="{% url 'noticias' %}">Volver a noticias</a>
+    </div>
+  
+</main>
+
+{% endblock %}

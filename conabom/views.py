@@ -34,6 +34,24 @@ def inicio(request):
 def logout(request):
     return render(request, 'registration/logged_out.html')
 
+#historia
+
+def historia(request):
+    return render(request, 'historia.html')
+
+#mision
+def mision(request):
+    return render(request, 'mision.html')
+
+#noticia
+def noticiaDetalles(request,pk):
+    noticia=Noticia.objects.get(pk=pk)
+
+    context={
+        'noticia': noticia,
+    }
+    return render(request, 'noticia.html', context)
+
 #registro de usuarios
 def registro(request):
     data= {

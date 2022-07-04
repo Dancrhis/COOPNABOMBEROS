@@ -183,13 +183,13 @@
             <div class="main_new_inner">
                 
                 <div class="main_new_title">
-                    <a href=""><h2>{{noticia1.titulo}}</h2></a>
+                    <a href="{% url 'noticiaDetalles' noticia1.id %}"><h2>{{noticia1.titulo}}</h2></a>
                 </div>
                 <div class="main_new_details">
                     <p class="detalles">{{noticia1.contenido|truncatewords:50}}</p>
                 </div>
                 <div class="news_continue">
-                    <a href="">seguir leyendo...</a>
+                    <a href="{% url 'noticiaDetalles' noticia1.id %}">seguir leyendo...</a>
                 </div>
             </div>
             
@@ -201,14 +201,14 @@
                 </div>
 
                 <div class="news_title">
-                    <a href=""> <h3>{{noticia2.titulo}}</h3></a>
+                    <a href="{% url 'noticiaDetalles' noticia2.id %}"> <h3>{{noticia2.titulo}}</h3></a>
                 </div>
 
                 <div class="news_content">
                     <p>{{noticia2.contenido|truncatewords:50}}</p>
                 </div>
                 <div class="news_continue">
-                    <a href="">seguir leyendo</a>
+                    <a href="{% url 'noticiaDetalles' noticia2.id %}">seguir leyendo</a>
                 </div>
 
             </div>
@@ -218,7 +218,7 @@
                 </div>
 
                 <div class="news_title">
-                    <a href=""> <h3>{{noticia3.titulo}}</h3></a>
+                    <a href="{% url 'noticiaDetalles' noticia3.id %}"> <h3>{{noticia3.titulo}}</h3></a>
                 </div>
 
                 
@@ -226,7 +226,7 @@
                     <p>{{noticia3.contenido|truncatewords:50}}</p>
                 </div>
                 <div class="news_continue">
-                    <a href="">seguir leyendo</a>
+                    <a href="{% url 'noticiaDetalles' noticia3.id %}">seguir leyendo</a>
                 </div>
 
             </div>
@@ -236,7 +236,7 @@
                 </div>
 
                 <div class="news_title">
-                    <a href=""> <h3>{{noticia4.titulo}}</h3></a>
+                    <a href="{% url 'noticiaDetalles' noticia4.id %}"> <h3>{{noticia4.titulo}}</h3></a>
                 </div>
 
                 
@@ -244,7 +244,7 @@
                     <p>{{noticia4.contenido|truncatewords:50}}</p>
                 </div>
                 <div class="news_continue">
-                    <a href="">seguir leyendo</a>
+                    <a href="{% url 'noticiaDetalles' noticia4.id %}">seguir leyendo</a>
                 </div>
 
             </div>

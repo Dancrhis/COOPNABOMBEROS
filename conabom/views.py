@@ -47,6 +47,9 @@ def mision(request):
 def ahorros(request):
     return render(request, 'ahorros.html')
 
+#ahorros
+def prestamos(request):
+    return render(request, 'prestamos.html')
 #noticia
 def noticiaDetalles(request,pk):
     noticia=Noticia.objects.get(pk=pk)

@@ -39,9 +39,13 @@ def logout(request):
 def historia(request):
     return render(request, 'historia.html')
 
-#mision
+#mision vision valores
 def mision(request):
-    return render(request, 'mision.html')
+    return render(request, 'mision_vision_valores.html')
+
+#ahorros
+def ahorros(request):
+    return render(request, 'ahorros.html')
 
 #noticia
 def noticiaDetalles(request,pk):

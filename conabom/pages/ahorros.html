@@ -1,0 +1,99 @@
+{% extends 'template.html'%}
+{% load static %}
+
+
+{% block content%}
+<main>
+    <div class="ahorros_titulo">
+        <h1>Ahorros</h1>
+        <div class="page_map">
+            <a href="{% url 'index'%}"><i class="fa-solid fa-house"></i>Inicio</a><i class="fa-solid fa-angle-right"></i><a href="{% url 'historia'%}">Ahorros</a>
+        </div>
+        
+    </div>
+    <div class="parallax_imagen_ahorros">
+
+    </div >
+    <div class="body_content">
+
+        <div class="ahorros_main_container">
+            
+            <div class="ahorros_container">
+    
+                
+                <div class="ahorros_contenido">
+                    <div class="subtitulo_ahorros">
+                        <h2>Tipos de ahorros</h2>
+                    </div>
+                    <div class="subtitulo2_ahorros">
+                        <h3>Se clasifican en: Normales y Especiales.</h3>
+                    </div>
+                    <div class="subtitulo2_ahorros">
+                        <h3>Ahorro normal:</h3>
+                    </div>
+                    <p>
+                        Son los ahorros (aportaciones) mensuales que realiza el socio en la Cooperativa, los
+                        cuales nunca serán menores de $200.00 mensuales para el aporte y para el ahorro.
+                    </p>
+                    <div class="subtitulo2_ahorros">
+                        <h3>Ahorro especial:</h3>
+                    </div>
+                    <p>
+                        Cuando sean para planes especiales tales como:
+                    </p>
+                    <ul>
+                        <li>Retirables.</li>
+                        <li>NaviBom</li>
+                        <li>Viajes y Recreacion</li>
+                        <li>Deposito a plazo fijo (Certificado Financiero)</li>
+                        <li>Otros.</li>
+                    </ul>  
+                        
+                    <div class="subtitulo2_ahorros">
+                        <h3>Ahorro extraordinario:</h3>
+                    </div>
+                    <p>
+                        El socio (a) puede depositar como aportes extraordinarios la suma desde <b>RD$1,000.00</b>  (mil
+                        pesos con 00/100) hasta <b>RD$10,000.00</b>  (diez mil pesos con 00/100). Este último será el
+                        monto máximo en este tipo de ahorro y estará disponible para todos los servicios de tres
+                        (3) meses después de haberse depositado
+                    </p>
+                </div>
+               
+                
+            </div>   
+            <div class="more_info">
+                <div class="more_info_content">
+                    <div class="more_info_section">
+    
+                        <ul>
+                            <li><h3>Mas Informaciones:</h3></li>
+                            <li><a href="{% url 'misionVisionValores' %}">Mision</a></li>
+                            <li><a href="">Vision</a></li>
+                            <li><a href="">Valores</a></li>
+                            <li><a href="">Mensaje del Presidente</a></li>
+                        </ul>
+                    </div>
+                    <div class="more_info_section">
+    
+                        <ul>
+                            <li><h3>Otras Informaciones:</h3></li>
+                            <li><a href="{% url 'noticias'%}">Noticias</a></li>
+                            <li><a href="">Eventos</a></li>
+                            <li><a href="">Valores</a></li>
+                            <li><a href="">Mensaje del Presidente</a></li>
+                        </ul>
+                    </div>
+                    
+                    
+                    
+                </div>
+            </div>
+    
+            
+            
+        </div>
+    </div>
+  
+</main>
+{% endblock %}

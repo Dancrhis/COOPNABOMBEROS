@@ -1,0 +1,101 @@
+
+{% extends 'template.html'%}
+{% load static %}
+
+
+{% block content%}
+<main>
+    <div class="mision_titulo">
+        <h1>Nuestra <span class="resaltado">Mision</span></h1>
+        <div class="page_map">
+            <a href="{% url 'index'%}"><i class="fa-solid fa-house"></i>Inicio</a><i class="fa-solid fa-angle-right"></i><a href="{% url 'historia'%}">Mision</a>
+        </div>
+        
+    </div>
+    <div class="parallax_imagen_mision">
+
+    </div >
+    <div class="body_content">
+
+        <div class="mision_main_container">
+            
+            <div class="mision_container">
+    
+                
+                
+            
+                <div class="mision_contenido">
+                    <div class="subtitulo_mision">
+                        <h2>Misión</h2>
+                    </div>
+                    <p>
+                        Contribuir a mejorar la calidad de vida de los socios, mediante servicios
+                        enfocados en el bienestar económico, social y emocional; y, en apoyo
+                        financiero y asistencia técnica a los emprendedores y MIPYME.
+                    </p>
+                      
+                        
+                   
+                    
+                </div>
+                <div class="mision_contenido">
+                    <div class="subtitulo_mision">
+                        <h2>Visión</h2>
+                    </div>
+                    <p> Ser referente en el sector cooperativista como una entidad actualizada e
+                        innovadora, a través la excelencia en el servicio, mejora en la calidad de
+                        vida de los socios, contribución al desarrollo de la comunidad y la
+                        promoción y protección del medioambiente.</p> 
+    
+                </div>
+                <div class="mision_contenido">
+                    <div class="subtitulo_mision">
+                        <h2>Valores</h2>
+                    </div>
+                    <ul>
+                        <li>Honestidad</li>
+                        <li>Transparencia</li>
+                        <li>Equidad</li>
+                        <li>Solidaridad</li>
+                        <li>Responsabilidad</li>
+                        <li>Democracia</li>
+                    </ul>
+    
+                </div>
+                
+            </div>   
+            <div class="more_info">
+                <div class="more_info_content">
+                    <div class="more_info_section">
+    
+                        <ul>
+                            <li><h3>Mas Informaciones:</h3></li>
+                            <li><a href="{% url 'misionVisionValores' %}">Mision</a></li>
+                            <li><a href="">Vision</a></li>
+                            <li><a href="">Valores</a></li>
+                            <li><a href="">Mensaje del Presidente</a></li>
+                        </ul>
+                    </div>
+                    <div class="more_info_section">
+    
+                        <ul>
+                            <li><h3>Otras Informaciones:</h3></li>
+                            <li><a href="{% url 'noticias'%}">Noticias</a></li>
+                            <li><a href="">Eventos</a></li>
+                            <li><a href="">Valores</a></li>
+                            <li><a href="">Mensaje del Presidente</a></li>
+                        </ul>
+                    </div>
+                    
+                    
+                    
+                </div>
+            </div>
+    
+            
+            
+        </div>
+    </div>
+  
+</main>
+{% endblock %}

@@ -47,10 +47,25 @@ def mision(request):
 def ahorros(request):
     return render(request, 'ahorros.html')
 
-#ahorros
+#prestamos
 def prestamos(request):
     return render(request, 'prestamos.html')
+#plan ayuda mutua
+def planAyudaMutua(request):
+    return render(request, 'PlanAyudaMutua.html')
 #noticia
+
+def noticiasIndex(request):
+    noticias =Noticia.objects.all().order_by("-fechaPublicacion")
+    noticias_page=Paginator(noticias,10)
+    page_number = request.GET.get('page')
+    page_obj= noticias_page.get_page(page_number)
+    context={
+        'page_obj': page_obj,
+    }
+    return render(request,"noticias.html", context)  
+
+#noticiaDetalles
 def noticiaDetalles(request,pk):
     noticia=Noticia.objects.get(pk=pk)
 
@@ -59,6 +74,27 @@ def noticiaDetalles(request,pk):
     }
     return render(request, 'noticia.html', context)
 
+
+#eventos
+
+def eventosActividadesIndex(request):
+    eventos =Evento.objects.all().order_by("-fechaPublicacion")
+    eventos_page=Paginator(eventos,10)
+    page_number = request.GET.get('page')
+    page_obj= eventos_page.get_page(page_number)
+    context={
+        'page_obj': page_obj,
+    }
+    return render(request,"eventos_actividades.html", context)  
+
+#evento_detalles
+def EventoActividad_detalles(request,pk):
+    evento=Evento.objects.get(pk=pk)
+
+    context={
+        'evento': evento,
+    }
+    return render(request, 'evento.html', context)
 #registro de usuarios
 def registro(request):
     data= {
@@ -82,16 +118,6 @@ def registro(request):
     
     
     return render(request, "registration/register.html", data )
-
-def noticiasIndex(request):
-    noticias =Noticia.objects.all().order_by("-fechaPublicacion")
-    noticias_page=Paginator(noticias,10)
-    page_number = request.GET.get('page')
-    page_obj= noticias_page.get_page(page_number)
-    context={
-        'page_obj': page_obj,
-    }
-    return render(request,"noticias.html", context)
 
 
 @login_required

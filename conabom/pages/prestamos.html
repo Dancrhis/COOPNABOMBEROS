@@ -4,6 +4,194 @@
 
 {% block content%}
 <main>
-    <p>contenido principal</p>
+    <div class="prestamos_titulo">
+        <h1>Prestamos</h1>
+        <div class="page_map">
+            <a href="{% url 'index'%}"><i class="fa-solid fa-house"></i>Inicio</a><i class="fa-solid fa-angle-right"></i><a href="{% url 'prestamos'%}">Prestamos</a>
+        </div>
+        
+    </div>
+    <div class="parallax_imagen_prestamos">
+
+    </div >
+    <div class="body_content">
+
+        <div class="prestamos_main_container">
+            
+            <div class="prestamos_container">
+    
+                
+                <div class="prestamos_contenido">
+                    <div class="subtitulo_prestamos">
+                        <h2>Prestamos</h2>
+                    </div>
+                    <div class="subtitulo2_ahorros">
+                        <h3>Prestamo Gerencial</h3>
+                    </div>
+                    <ul>
+                        <li>En este préstamo el socio puede disponer inmediatamente del 40% de su salario</li>
+                        <li>100% de todo lo que ha ahorrado en la cuenta de aportes</li>
+                        <li>Disponer del 80% del valor del Certificado Financiero</li>
+                    </ul>
+                </div>
+                <div class="prestamos_contenido">
+                    
+                    <div class="subtitulo2_ahorros">
+                        <h3>Prestamo Normal</h3>
+                    </div>
+                    <table>
+                        <tr>
+                            <th>Nuevo Ingreso</th>
+                            <th>Aportaciones</th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <td>3 Cuotas(meses)</td>
+                            <td>1 X 1</td>
+                            <td>1 veces las aportaciones</td>
+                            
+                        </tr>
+                        <tr>
+                            <td>6 Cuotas</td>
+                            <td>1.5 X 1</td>
+                            <td>1.5 veces las aportaciones</td>
+                        </tr>
+                        <tr>
+                            <td>9 Cuotas</td>
+                            <td> 2 X 1</td>
+                            <td>2 veces las aportaciones</td>
+                            
+                        </tr>
+                        <tr>
+                            <td>12 Cuotas</td>
+                            <td>3 x 1</td>
+                            <td>3 veces las aportaciones</td>
+                        </tr>
+                        
+                    </table>
+                
+                </div>
+                <div class="prestamos_contenido">
+                        
+                    <div class="subtitulo2_ahorros">
+                        <h3>Prestamo Semana Santa</h3>
+                    </div>
+                    <ul>
+                        <li>Te ofrecemos prestamos de $1000.00 a $3000.00 con motivos de el asueto de semana santa</li>
+                    </ul>
+                    
+                </div>
+                <div class="prestamos_contenido">
+                        
+                    <div class="subtitulo2_ahorros">
+                        <h3>Prestamo Navideño</h3>
+                    </div>
+                    <ul>
+                        <li>Ofrecemos prestamos de $3,000.00 a $5,000.00 para que puedas festejar la Navidad</li>
+                    </ul>
+                    
+                </div>
+                <div class="prestamos_contenido">
+                    
+                        <div class="calculadora">
+                            <div class="calculadora_inner">
+                                <div class="subtitulo2_ahorros">
+                                    <h3>calculadora de Prestamos:</h3>
+                                </div>
+                                <form action="https://www.mlcalc.com/" method="post" onsubmit="return mlcalcCalculate(this)">
+                                <input type="hidden" name="wl" value="es">
+                                <div class="calculadora_subdiv">
+                                    <label for="la">Cantidad Prestamo: </label>
+                                    <input type="number" name="la"  placeholder="$"> 
+                                </div>
+                                <div class="calculadora_subdiv">
+                                    <label for="lt">Tiempo Prestamo:  </label>
+                                    <input type="number" name="lt"  placeholder="cantidad de años">
+                                </div>
+                                <div class="calculadora_subdiv">
+                                    <label for="ir">Tasa de Interes:  </label>
+                                    <input type="text" name="ir"  placeholder="%">
+                                </div>
+                                <div class="calculadora_subdiv">
+                                     <label for="sm">Fecha del primer pago (Mes): </label>
+                                     <input type="number" name="sm" placeholder="Ejemplo:2" placeholder="" >
+                                </div>
+                                <div class="calculadora_subdiv">
+                                    <label for="sy">Fecha del primer pago (Año):</label>
+                                    <input type="number" name="sy" placeholder="Ejemplo: 2020">
+                                </div>
+                                <div class="calculadora_subdiv_radio">
+                                    <label>Amotizacion:</label>
+                                    <div>
+                                        <label><input type="radio" name="as" value="Año" checked="checked">Mostrar por año</label>
+                                    </div>
+                                   <div>
+                                        <label><input type="radio" name="as" value="Mes">Mostrar por mes</label>
+                                   </div>
+                                   <div>
+                                        <label><input type="radio" name="as" value="No mostrar"> No mostrar</label>
+                                   </div>
+                                   
+                                </div>
+                                <div class="calculadora_btn">
+                                    <input type="submit" value="Calcular">
+                                </div>
+                                
+                                
+                               
+                                
+                                
+                                
+                                
+                            </div>
+                            </form>
+                            </div>
+                        
+                        
+                            
+                    
+                    
+                </div>
+               
+                
+            </div>   
+            <div class="more_info">
+                <div class="more_info_content">
+                    <div class="more_info_section">
+    
+                        <ul>
+                            <li><h3>Mas Informaciones:</h3></li>
+                            <li><a href="{% url 'misionVisionValores' %}">Mision</a></li>
+                            <li><a href="">Vision</a></li>
+                            <li><a href="">Valores</a></li>
+                            <li><a href="">Mensaje del Presidente</a></li>
+                        </ul>
+                    </div>
+                    <div class="more_info_section">
+    
+                        <ul>
+                            <li><h3>Otras Informaciones:</h3></li>
+                            <li><a href="{% url 'noticias'%}">Noticias</a></li>
+                            <li><a href="">Eventos</a></li>
+                            <li><a href="">Valores</a></li>
+                            <li><a href="">Mensaje del Presidente</a></li>
+                        </ul>
+                    </div>
+                    
+                    
+                    
+                </div>
+            </div>
+    
+            
+            
+        </div>
+        <div class="link_volver">
+
+            <a href="{% url 'index' %}">Volver a Inicio</a>
+        </div>
+    </div>
+
+  
 </main>
 {% endblock %}

@@ -1,0 +1,98 @@
+{% extends 'template.html'%}
+{% load static %}
+
+
+{% block content%}
+<main>
+    <div class="noticias_titulo">
+        <h1> Eventos y Actividades</h1>
+        <div class="page_map">
+            <a href="{% url 'index'%}"><i class="fa-solid fa-house"></i>Inicio</a><i class="fa-solid fa-angle-right"></i><a href="{% url 'eventos'%}">Eventos & Actividades</a>
+        </div>
+        
+    </div>
+    
+    <div class="noticias_body_content">
+
+        <div class="noticias_main_container">
+    
+            <div class="noticias_inner_container">
+        
+                {% for evento in page_obj%}
+                    <div class="noticia_container">
+                        <div class="news_img_view">
+                            <img src={{evento.foto.url}} alt="">
+                        </div>
+                        <div class="noticias_contenido_preview">
+    
+                            <div class="noticias_ver_titulo">
+                                <a href=""><h3>{{evento.titulo}}</h3></a>
+                                <div>
+                                    <p>fecha de publicacion: {{evento.fechaPublicacion}}</p>
+                                </div>
+                                <div><p>{{evento.contenido|truncatewords:20}}</p></div>
+                
+                            </div>
+                            <div class="news_continue">
+                                <a href="{% url 'eventoDetalles' evento.id %}">Ver mas detalles </a>
+    
+                            </div>
+                        </div>
+                        
+                    </div>
+    
+    
+    
+                {% endfor%}
+                <div class="pagination">
+                    <span class="step-links">
+                        {% if page_obj.has_previous %}
+                            <a href="?page=1">&laquo; Inicio</a>
+                            <a href="?page={{ page_obj.previous_page_number }}">Anterior</a>
+                        {% endif %}
+                
+                        <span class="current">
+                            Pagina {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}.
+                        </span>
+                
+                        {% if page_obj.has_next %}
+                            <a href="?page={{ page_obj.next_page_number }}">siguiente</a>
+                            <a href="?page={{ page_obj.paginator.num_pages }}">Ultima &raquo;</a>
+                        {% endif %}
+                    </span>
+                </div>
+                
+            </div>   
+            <div class="more_info">
+                <div class="more_info_content">
+                    <div class="more_info_section">
+    
+                        <ul>
+                            <li><h3>Mas Informaciones:</h3></li>
+                            <li><a href="">Historia</a></li>
+                            <li><a href="">Vision</a></li>
+                            <li><a href="">Valores</a></li>
+                            <li><a href="">Mensaje del Presidente</a></li>
+                        </ul>
+                    </div>
+                    <div class="more_info_section">
+    
+                        <ul>
+                            <li><h3>Otras Informaciones:</h3></li>
+                            <li><a href="{% url 'noticias'%}">Noticias</a></li>
+                            <li><a href="">Eventos</a></li>
+                            <li><a href="">Valores</a></li>
+                            <li><a href="">Mensaje del Presidente</a></li>
+                        </ul>
+                    </div>
+                    
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+  
+</main>
+
+{% endblock %}

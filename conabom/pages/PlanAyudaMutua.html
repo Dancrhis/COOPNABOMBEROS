@@ -4,6 +4,95 @@
 
 {% block content%}
 <main>
-    <p>contenido principal</p>
+    <div class="ayudamutua_titulo">
+        <h1>Plan de Ayuda Mutua</h1>
+        <div class="page_map">
+            <a href="{% url 'index'%}"><i class="fa-solid fa-house"></i>Inicio</a><i class="fa-solid fa-angle-right"></i><a href="{% url 'ayudaMutua'%}">Plan de Ayuda mutua</a>
+        </div>
+        
+    </div>
+    <div class="parallax_imagen_ayudamutua">
+
+    </div >
+    <div class="body_content">
+
+        <div class="ayudamutua_main_container">
+            
+            <div class="ayudamutua_container">
+    
+                
+                <div class="ayudamutua_contenido">
+                    <div class="subtitulo_ayudamutua">
+                        <h2>Plan de Ayuda Mutua</h2>
+                    </div>
+                    <p>
+                        Este servicio consiste en un plan de gastos funerarios, donde el socio puede incluir a sus
+                        dependientes directos, es decir madre, padre cónyuge e hijos(as).
+                    </p>
+                    <p>
+                        El período requerido para ingresar al plan es desde recién nacido hasta los sesenta y cinco (65)
+                        años de edad.
+                    </p>
+                    <p>
+                        Para ingresar a sus dependientes, el socio(a) deberá llenar una solicitud de ingreso, indicando a los
+                        familiares que desea incluir y anexando los documentos que avalen el parentesco.
+                    </p>
+                    <p>
+                        Al ingresar al plan el asociado(a) pagará una cuota de RD$50.00 (cincuenta pesos) mensuales por
+                        él y por cada dependiente afiliado.
+                    </p>
+                    <p>
+                        Coopnabomberos entregará como beneficio el monto de RD$30,000.00 (Treinta mil pesos) en
+                        caso de fallecimiento del miembro afiliado a dicho plan.
+                    </p>
+                    <p>
+                        <b>Nota: Será efectivo a partir de los 6 meses de ingresar al plan.</b>
+                    </p>
+                    
+                </div>
+               
+                
+                
+               
+                
+            </div>   
+            <div class="more_info">
+                <div class="more_info_content">
+                    <div class="more_info_section">
+    
+                        <ul>
+                            <li><h3>Mas Informaciones:</h3></li>
+                            <li><a href="{% url 'misionVisionValores' %}">Mision</a></li>
+                            <li><a href="">Vision</a></li>
+                            <li><a href="">Valores</a></li>
+                            <li><a href="">Mensaje del Presidente</a></li>
+                        </ul>
+                    </div>
+                    <div class="more_info_section">
+    
+                        <ul>
+                            <li><h3>Otras Informaciones:</h3></li>
+                            <li><a href="{% url 'noticias'%}">Noticias</a></li>
+                            <li><a href="">Eventos</a></li>
+                            <li><a href="">Valores</a></li>
+                            <li><a href="">Mensaje del Presidente</a></li>
+                        </ul>
+                    </div>
+                    
+                    
+                    
+                </div>
+            </div>
+    
+            
+            
+        </div>
+        <div class="link_volver">
+
+            <a href="{% url 'index' %}">Volver a Inicio</a>
+        </div>
+    </div>
+
+  
 </main>
 {% endblock %}

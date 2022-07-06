@@ -169,7 +169,9 @@ nav >ul > li>a{
     transition: all 300ms ease;
 }
 
-
+.login_link{
+    display: none;
+}
 
 
 /*submenu*/
@@ -306,12 +308,12 @@ nav ul li ul li a:hover{
 .contenido-slider a{
     font-weight: 600;
     color: #fff;
-    background: rgb(13, 175, 13);
+    background: #80c341;
     width: 100px;
     display: block;
     padding: 15px 0;
     text-align: center;
-    border-radius: 20px;
+    border-radius: 10px;
     margin-top: 20px;
     text-decoration: none;
     text-shadow: 0 2px 2px rgba(0,0,0,0.2);
@@ -1207,13 +1209,16 @@ nav ul li ul li a:hover{
     background-color: #ffffff;
     text-align: justify;
     color: #000000;
-     
-
-    
+   
     
 }
 .mision_contenido ul{
     margin-left: 40px;
+    margin-bottom: 2%;
+
+}
+.mision_contenido p{
+    margin-bottom: 2%;
 
 }
 
@@ -1382,9 +1387,7 @@ nav ul li ul li a:hover{
     margin-left: 20px;
 
 }
-.mision_titulo span{
-    color: #E9CB2D;
-}
+
 .parallax_imagen_ahorros{
     display: flex;
     width: 100%;
@@ -1425,7 +1428,8 @@ nav ul li ul li a:hover{
 .subtitulo2_ahorros{
     
     color: #34673C;
-    margin-bottom: 2%;
+    margin-bottom: 1%;
+    margin-top: 2%;
 }
 .ahorros_contenido{
     width: 100%;
@@ -1442,12 +1446,221 @@ nav ul li ul li a:hover{
 
 }
 
-.ahorros_imagen img{
-    width:100%;
-    max-width: 720px;
+
+
+/*prestamos*/
+.prestamos_titulo{
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    width: 100%;
+    height: 100px;
+    background-image: url('/static/IMG/images/news-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.prestamos_titulo h1{
+    margin-left: 20px;
+    color: #ffffff;
+}
+.page_map{
+    color: #ffffff;
+}
+.page_map a{
+    display: inline;
+    color: #80c341;
+    margin-left: 20px;
+
 }
 
+.parallax_imagen_prestamos{
+    display: flex;
+    width: 100%;
+    height: 60vh;
+    background-attachment:fixed;
+    background-image: url('/static/IMG/images/prestamos.webp');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    scroll-behavior: smooth;
+    
+   
+}
+.prestamos_main_container{
+    
+    display: flex;
+    justify-content: flex-start;
+    background-color: #ffffff;
+    
+    
+}
 
+.prestamos_container{
+    max-width: 900px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    background-color: #ffffff;
+}
+
+.subtitulo_prestamos{
+    width: 100%;
+    color: #34673C;
+    padding: 20px;
+    
+}
+.subtitulo2_prestamos{
+    
+    color: #34673C;
+    margin-bottom: 1%;
+    margin-top: 2%;
+}
+.prestamos_contenido{
+    width: 100%;
+    background-color: #ffffff;
+    text-align: justify;
+    color: #000000;
+     
+
+    
+    
+}
+.prestamos_contenido ul{
+    margin-left: 40px;
+    margin-bottom: 5%;
+
+}
+.calculadora{
+    border:#34673C solid 2px;
+    border-radius: 20px;
+}
+.calculadora_inner{
+    
+    
+    padding: 2%;
+    
+    
+}
+.calculadora_subdiv{
+    width: 100%;
+}
+.calculadora_subdiv input,.calculadora_subdiv label{
+    display: block;
+    width: 100%;
+    padding: 5px;
+}
+
+.calculadora_subdiv input{
+    border-radius: 5px;
+}
+.calculadora_btn{
+    width: 100%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    text-align: center;
+}
+
+.calculadora_btn input{
+    padding: 10px;
+    background-color: #34673C;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    transition: ease 500ms all;
+}
+.calculadora_btn input:hover{
+    transform: scale(1.1);
+    cursor: hand;
+    background-color: #80c341;
+}
+/*Ayuda Mutua*/
+
+.ayudamutua_titulo{
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    width: 100%;
+    height: 100px;
+    background-image: url('/static/IMG/images/news-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.ayudamutua_titulo h1{
+    margin-left: 20px;
+    color: #ffffff;
+}
+.page_map{
+    color: #ffffff;
+}
+.page_map a{
+    display: inline;
+    color: #80c341;
+    margin-left: 20px;
+
+}
+
+.parallax_imagen_ayudamutua{
+    display: flex;
+    width: 100%;
+    height: 60vh;
+    background-attachment:fixed;
+    background-image: url('/static/IMG/images/ayudamutua.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    scroll-behavior: smooth;
+    
+   
+}
+.ayudamutua_main_container{
+    
+    display: flex;
+    justify-content: flex-start;
+    background-color: #ffffff;
+    
+    
+}
+
+.ayudamutua_container{
+    max-width: 900px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    background-color: #ffffff;
+}
+
+.subtitulo_ayudamutua{
+    width: 100%;
+    color: #34673C;
+    padding: 20px;
+    
+}
+.subtitulo2_ayudamutua{
+    
+    color: #34673C;
+    margin-bottom: 1%;
+    margin-top: 2%;
+}
+.ayudamutua_contenido{
+    width: 100%;
+    background-color: #ffffff;
+    text-align: justify;
+    color: #000000;
+     
+
+    
+    
+}
+.ayudamutua_contenido ul{
+    margin-left: 40px;
+
+}
 /*sidebar-users*/
 .user_page_body{
     
@@ -1639,7 +1852,7 @@ footer{
 
 @media screen and (max-width: 720px){
     .logo{
-        width: 200px;
+        width: 250px;
     }
     .container_menu{
         width: 50px;
@@ -1650,7 +1863,7 @@ footer{
         position: fixed;
         top: 0px;
         left:-400px;
-        width: 360px;
+        width: 200px;
         background-color: #fff;
         height: 100vh;
         margin: 0;
@@ -1699,7 +1912,7 @@ footer{
         position: absolute;
         z-index: 10;
         top: 50px;
-        left: 360px;
+        left: 190px;
         background-color: #ffffff;
     }
 
@@ -1711,11 +1924,12 @@ footer{
     }
 
     .menu-btn{
-        width: 50px;
+        width: 100%;
         height: 100%;
         display: flex;
         justify-content: center;
-        margin-right: 25px;
+        align-items: center;
+        
     }
     .menu-btn > li>a{
         width: 100%;
@@ -1740,7 +1954,7 @@ footer{
 
     .menu_logo{
         display: inline;
-        width: 250px;
+        width: 170px;
         margin-left: 30px;
         
     
@@ -1820,9 +2034,13 @@ footer{
     .ahorros_main_container{
         flex-direction: column;
     }
-    .noticias_main_container{
+    .prestamos_main_container{
         flex-direction: column;
     }
+    .ayudamutua_main_container{
+        flex-direction: column;
+    }
+    
     .noticia-detalles_main_container{
         flex-direction: column;
     }
@@ -1840,6 +2058,12 @@ footer{
         width: 100%;
         box-shadow: none; 
         flex-wrap: wrap;
+    }
+    .login-container{
+        display: none;
+    }
+    .login_link{
+        display: list-item;
     }
 }
 

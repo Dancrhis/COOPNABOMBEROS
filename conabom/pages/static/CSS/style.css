@@ -963,6 +963,7 @@ nav ul li ul li a:hover{
 /* user info*/
 .user_header_info{
     display: flex;
+    min-width: 150px;
     width: 100%;
     align-items:end;
     justify-content: center;
@@ -1852,7 +1853,7 @@ footer{
 
 @media screen and (max-width: 720px){
     .logo{
-        width: 250px;
+        width:100%;
         display: flex;
         align-items: center;
     }

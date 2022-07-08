@@ -22,26 +22,34 @@
 <div class="user_page_body">
   <div class="side-bar_container">
     <div class="sidebar">
-      <ul>
-        <li><h4>opciones de usuario:</h4></li>
-        <ul>
-          <li><a href="{% url 'userIndex'%}">inicio</a></li>
-          <li><a href="{% url 'userApplication'%}">solicitar afiliacion</a></li>
-          <li><a href="{% url 'userApplication2'%}">agregar beneficiarios</a></li>
-        </ul>
-        <li><h4>cuenta</h4></a></li>
-        <ul>
-          <li><a href="{% url 'userIndex'%}">inicio</a></li>
-          <li><a href="{% url 'userApplication'%}">solicitar afiliacion</a></li>
-          <li><a href="{% url 'userApplication2'%}">agregar beneficiarios</a></li>
-        </ul>
+        <div class="more_info_section">
+      
+          <ul>
+              <li><h3>Opciones de Usuario:</h3></li>
+              <li><a href="{% url 'userIndex'%}">inicio</a></li>
+              
+          </ul>
+      </div>
+      <div class="more_info_section">
 
-      </ul>
+          <ul>
+              <li><h3>Opciones de Cuenta:</h3></li>
+              <li><a href="">Reiniciar Contraseña</a></li>
+          </ul>
+      </div>
+      
      
     </div>
   
   </div>
   <div class="user-content">
+    {%if user_info.estado == null%}
+    <div class="link_volver">
+
+      <a href="{% url 'userApplication' %}">Solicitar afiliarse</a>
+  </div>
+    {% else %}
+
     {% for info in user_info %}
     <div class="socio-info">
 
@@ -225,7 +233,7 @@
 
 
   {% endfor%}
-    
+  {% endif %}  
  
 
  

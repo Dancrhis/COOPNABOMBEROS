@@ -1,5 +1,6 @@
 
 
+from itertools import count
 from conabom.forms import BeneficiarioForms, SocioForm
 from django.contrib import messages
 from django.shortcuts import redirect, render
@@ -122,11 +123,23 @@ def registro(request):
 
 @login_required
 def userIndex(request):
+    ucounter=0
+    bcounter=0
+    for n in Socio.objects.filter(usuario=request.user):
+        ucounter =+1
+
+    bcounter=0
+    for n in Beneficiario.objects.filter(afiliado=request.user):
+        bcounter =+1
     
     data={
         'user_info':Socio.objects.filter(usuario=request.user),
-        'beneficiario_info': Beneficiario.objects.filter(afiliado=request.user)
+        'beneficiario_info': Beneficiario.objects.filter(afiliado=request.user),
+        'user_cantidad': ucounter,
+        'bene_cantidad': bcounter,
     }
+    print(bcounter)
+
     return render(request, "users/user_index.html", data) 
 
 
@@ -149,10 +162,8 @@ def userApplication(request):
             
             socio.save()
             
-            data={
-                'form': BeneficiarioForms()
-            }
-            return render(request, 'users/user_application2.html', data)
+            
+            return redirect(to= 'userIndex')
         else:
             data={
 

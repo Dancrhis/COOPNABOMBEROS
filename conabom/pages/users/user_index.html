@@ -26,15 +26,16 @@
       
           <ul>
               <li><h3>Opciones de Usuario:</h3></li>
-              <li><a href="{% url 'userIndex'%}">inicio</a></li>
-              
+              <li><a href="{% url 'userIndex'%}">Informacion de solicitud</a></li>
+              <a href="{% url 'userApplication2' %}">Agregar Beneficiario</a>
           </ul>
       </div>
       <div class="more_info_section">
 
           <ul>
               <li><h3>Opciones de Cuenta:</h3></li>
-              <li><a href="">Reiniciar Contraseña</a></li>
+              <li><a href="">Cambiar Contraseña</a></li>
+              <li><a href="{% url 'logout'%}"><i class="fa-solid fa-arrow-right-from-bracket"></i> Cerrar sesion </i></a></li>
           </ul>
       </div>
       
@@ -43,15 +44,16 @@
   
   </div>
   <div class="user-content">
-    {%if user_info.estado == null%}
+    {%if user_cantidad == 0  %}
     <div class="link_volver">
 
-      <a href="{% url 'userApplication' %}">Solicitar afiliarse</a>
+      <a href="{% url 'userApplication' %}">llenar formulario de solicitud</a>
   </div>
     {% else %}
 
     {% for info in user_info %}
     <div class="socio-info">
+      
 
       <table>
         <tr>
@@ -175,7 +177,13 @@
     </div>
     {% endfor%}
     
-      
+     {% if bene_cantidad == 0 %} 
+     
+      <div class="link_volver">
+
+        <a href="{% url 'userApplication2' %}">Agregar Beneficiario</a>
+      </div>
+      {% else %}
     <h3>Informacion de Beneficiarios:</h3>
     {% for beneficiario in beneficiario_info %}
     <div class="beneficiario_info">
@@ -217,6 +225,7 @@
         </tr>
         
       </table>
+      
       <hr>
         <div class="btn-container">
           <div class="btn-info" >
@@ -227,12 +236,15 @@
           </div>
             
         </div>
-      <hr>
+      
     </div>
     
 
 
   {% endfor%}
+  
+  
+  {% endif %}
   {% endif %}  
  
 

@@ -927,13 +927,12 @@ nav ul li ul li a:hover{
 }
 
 .login-btn input{
-    margin-top: 20px;
-    margin-right: 20px;
+    margin: 20px;
     width: 100px;
     font-weight: bold;
     color: #34673C;
     border: #34673C solid 3px;
-    border-radius: 50px;
+    border-radius: 10px;
     padding:5px 10px ;
     transition: all 300ms ease;
 
@@ -1005,24 +1004,33 @@ nav ul li ul li a:hover{
 .user-content{
 
     display: flex;
+
     margin-right: 30px;
     max-width: 720px;
     flex-direction: column;
+    min-height: 350px;
  }
  
+ .user-content .link_volver{
+
+    margin: 10% 0;
+ }
+ 
+ 
 .form_label{
-    width: 100x;
+    min-width: 100px;
     
     text-align: left;
 }
 .form_input1 input{
-    min-width: 200px;
+    min-width: 150px;
 }
 .form_subtitle{
     text-align: left;
 }
 
 .aportes_info{
+    
     border: solid 3px #000000;
     text-align: justify;
     padding: 10px;
@@ -1699,6 +1707,8 @@ nav ul li ul li a:hover{
 }
 
 .btn-container{
+    margin-top: 2%;
+    margin-bottom: 2%;
     display: flex;
     justify-content: space-between;
 
@@ -1709,6 +1719,7 @@ nav ul li ul li a:hover{
 
 }
 .btn-info a{
+    
     background-color: #34673C;
     color: #ffffff;
     font-weight: 400;

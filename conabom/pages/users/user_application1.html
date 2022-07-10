@@ -23,10 +23,22 @@
 <div class="user_page_body">
   <div class="side-bar_container">
     <div class="sidebar">
-      <ul>
-        <li><a href="">solicitar afiliacion</a></li>
-        <li><a href="">cuenta</a></li>
-      </ul>
+      <div class="more_info_section">
+      
+        <ul>
+            <li><h3>Opciones de Usuario:</h3></li>
+            <li><a href="{% url 'userIndex'%}">Informacion de solicitud</a></li>
+            <a href="{% url 'userApplication2' %}">Agregar Beneficiario</a>
+        </ul>
+    </div>
+    <div class="more_info_section">
+
+        <ul>
+            <li><h3>Opciones de Cuenta:</h3></li>
+            <li><a href="">Cambiar Contraseña</a></li>
+            <li><a href="{% url 'logout'%}"><i class="fa-solid fa-arrow-right-from-bracket"></i> Cerrar sesion </i></a></li>
+        </ul>
+    </div>
      
     </div>
   

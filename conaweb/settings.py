@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
+from tkinter import FALSE
 
 
 from django.urls import reverse_lazy
@@ -26,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-$wl44v2skgyz$&hev=a5i(5k)=d02m2v@zt&)_(-t_h$+q#^29'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['arcane-bayou-67214.herokuapp.com','127.0.0.1']
 

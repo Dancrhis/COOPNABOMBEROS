@@ -1,5 +1,6 @@
 
 from datetime import datetime
+from distutils.command.upload import upload
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
@@ -74,3 +75,7 @@ class Evento(models.Model):
     fechaPublicacion=models.DateTimeField(default=timezone.now)
 
 
+class ImagenesGaleria(models.Model):
+    foto=models.ImageField(upload_to="galeria/%y%m%d", null=True, blank=True)
+    titulo=models.CharField(default="titulo", max_length=300,blank=True, editable=True)
+    fechaPublicacion=models.DateTimeField(default=timezone.now)

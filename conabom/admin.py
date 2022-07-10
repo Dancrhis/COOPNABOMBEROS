@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from conabom.models import Beneficiario, Evento, Noticia, Socio,Slider
+from conabom.models import Beneficiario, Evento, ImagenesGaleria, Noticia, Socio,Slider
 
 
 # Register your models here.
@@ -25,9 +25,14 @@ class EventoAdmin(admin.ModelAdmin):
     list_display= ["titulo","fechaPublicacion"]
     list_filter= ["fechaPublicacion"]
     search_fields=["titulo"]
+class ImagenesAdmin(admin.ModelAdmin):
+    list_display= ["titulo"]
+    list_filter= ["fechaPublicacion"]
+    search_fields=["titulo"]
 
 
 admin.site.register(Socio, SocioAdmin)
 admin.site.register(Beneficiario,BeneficiarioAdmin)
 admin.site.register(Noticia,NoticiaAdmin)
 admin.site.register(Evento, EventoAdmin)
+admin.site.register(ImagenesGaleria, ImagenesAdmin)

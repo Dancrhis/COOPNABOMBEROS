@@ -1299,8 +1299,10 @@ nav ul li ul li a:hover{
     height: 200px;
     
 }
+
 .noticias_contenido_preview{
     min-width: 300px;
+    margin-left: 20px;
 }
 
 .news_img_view img{
@@ -1308,9 +1310,7 @@ nav ul li ul li a:hover{
     height: 100%;
     
 }
-.noticias_contenido_preview{
-    margin-left: 20px;
-}
+
 
 /*noticias Detalles*/
 .parallax_imagen_noticia{
@@ -1670,6 +1670,31 @@ nav ul li ul li a:hover{
     margin-left: 40px;
 
 }
+
+/*galeria*/
+.galeria_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.galeria_inner_container{
+    width: 100%;
+    min-width: 720px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+.galeria_container_img{
+    max-width: 360px;
+    box-sizing: border-box;
+    margin:5px
+}
+.galeria_container_img img{
+    width: 360px;
+    box-sizing: border-box;
+    margin-bottom: 2%;
+}
 /*sidebar-users*/
 .user_page_body{
     
@@ -2002,6 +2027,10 @@ footer{
         margin: 20px 0;
         
     }
+    .noticias_contenido_preview{
+        min-width: none;
+        margin-left: 0;
+    }
     .marco_contenido{
         display: flex;
         flex-wrap: wrap;
@@ -2058,6 +2087,9 @@ footer{
     .ayudamutua_main_container{
         flex-direction: column;
     }
+    .noticias_main_container{
+        flex-direction: column;
+    }
     
     .noticia-detalles_main_container{
         flex-direction: column;
@@ -2070,6 +2102,8 @@ footer{
     }
     .noticia_container{
         flex-wrap: wrap;
+        margin-left: 0;
+        max-width: 360px;
     }
     .more_info_content{
         display: flex;

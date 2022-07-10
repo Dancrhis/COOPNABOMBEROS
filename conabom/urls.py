@@ -19,6 +19,7 @@ urlpatterns = [
     path('noticias/noticiaDetalles/<int:pk>', views.noticiaDetalles, name='noticiaDetalles'),
     path('eventos_Actividades/', views.eventosActividadesIndex, name='eventos'),
     path('eventos_Actividades/eventoDetalles/<int:pk>', views.EventoActividad_detalles, name='eventoDetalles'),
+    path('galeria/', views.galeria, name='galeria'),
     path('accounts/user_index/userAplication/', views.userApplication, name='userApplication'),
     path('accounts/user_index/userAplication2/', views.userApplication2, name='userApplication2'),
     path('accounts/ logout/', views.logout, name='logout'),

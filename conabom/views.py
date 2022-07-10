@@ -9,7 +9,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login
 from conabom.forms import CustomUserCreationForm
-from conabom.models import Beneficiario, Slider, Socio, Noticia, Evento
+from conabom.models import Beneficiario, ImagenesGaleria, Slider, Socio, Noticia, Evento
 from django.core.paginator import Paginator
 
 # Create your views here.
@@ -96,6 +96,19 @@ def EventoActividad_detalles(request,pk):
         'evento': evento,
     }
     return render(request, 'evento.html', context)
+
+
+#eventos
+
+def galeria(request):
+    imagenes =ImagenesGaleria.objects.all().order_by("-fechaPublicacion")
+    imagenes_page=Paginator(imagenes,10)
+    page_number = request.GET.get('page')
+    page_obj= imagenes_page.get_page(page_number)
+    context={
+        'page_obj': page_obj,
+    }
+    return render(request,"galeria.html", context)
 #registro de usuarios
 def registro(request):
     data= {

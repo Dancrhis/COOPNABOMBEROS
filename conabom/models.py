@@ -33,11 +33,11 @@ class Socio(models.Model):
     municipio=models.CharField(max_length=100)
     sector=models.CharField(max_length=100)
     estadoCivil=models.CharField(max_length=100)
-    telefono=models.IntegerField(null=True, blank=True)
-    celular=models.IntegerField(null=True, blank=True)
+    telefono=models.BigIntegerField(null=True, blank=True)
+    celular=models.BigIntegerField(null=True, blank=True)
     lugarTrabajo=models.CharField(max_length=100)
     cargo=models.CharField(max_length=100)
-    telefonoLugarTrabajo=models.IntegerField()
+    telefonoLugarTrabajo=models.BigIntegerField()
     institucionAtencionEmergencia=models.CharField(max_length=400, null=True)
     ubicacion=models.CharField(max_length=400, null=True)
     aporte=models.IntegerField(default=0)
@@ -51,7 +51,7 @@ class Beneficiario(models.Model):
     apellido2=models.CharField(max_length=100, null=True,blank=True)
     parentezco=models.CharField(max_length=50)
     porcentaje=models.IntegerField()
-    telefono=models.IntegerField(default=8099999999)
+    telefono=models.BigIntegerField(default=8099999999)
 
 
 class Slider(models.Model):

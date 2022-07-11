@@ -51,7 +51,7 @@ class Beneficiario(models.Model):
     apellido2=models.CharField(max_length=100, null=True,blank=True)
     parentezco=models.CharField(max_length=50)
     porcentaje=models.IntegerField()
-    telefono=models.BigIntegerField(default=8099999999)
+    telefono=models.BigIntegerField()
 
 
 class Slider(models.Model):

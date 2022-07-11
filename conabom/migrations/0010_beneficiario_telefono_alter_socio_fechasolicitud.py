@@ -14,7 +14,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='beneficiario',
             name='telefono',
-            field=models.IntegerField(default=8099999999),
+            field=models.IntegerField(default=8099),
         ),
         migrations.AlterField(
             model_name='socio',

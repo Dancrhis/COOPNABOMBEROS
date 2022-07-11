@@ -44,7 +44,7 @@ class Socio(models.Model):
 
 class Beneficiario(models.Model):
     afiliado=models.ForeignKey(User,to_field='username', on_delete=models.CASCADE)
-    cedula=models.IntegerField(null=False)
+    cedula=models.BigIntegerField(null=False)
     nombre1=models.CharField(max_length=100, null=False)
     nombre2=models.CharField(max_length=100, null=True,blank=True)
     apellido1=models.CharField(max_length=100, null=False)

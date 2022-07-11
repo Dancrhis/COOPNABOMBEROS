@@ -25,14 +25,14 @@
                 <section class="contenido-slider" id="slide1" >
                     <div >
                         <h2>{{evento1.titulo}}</h2>
-                        <a href="#">Ver mas...</a>
+                        <a href="{% url 'eventoDetalles' evento1.id %}">Ver mas...</a>
                     </div>
                 
                 </section>
                 <section class="contenido-slider" id="slide2">
                     <div >
                         <h2>{{evento2.titulo}}</h2>
-                        <a href="#">Ver mas...</a>
+                        <a href="{% url 'eventoDetalles' evento2.id %}">Ver mas...</a>
                     </div>
                     
     
@@ -40,7 +40,7 @@
             <section class="contenido-slider" id="slide3">
                 <div>
                     <h2>{{evento3.titulo}}</h2>
-                    <a href="#">Ver mas...</a>
+                    <a href="{% url 'eventoDetalles' evento3.id %}">Ver mas...</a>
                 </div>
                 <script src="{% static 'JS/main.js'%}"></script>
     
@@ -48,7 +48,7 @@
             <section class="contenido-slider" id="slide4">
                 <div>
                     <h2>{{evento1.titulo}}</h2>
-                    <a href="#">Ver mas...</a>
+                    <a href="{% url 'eventoDetalles' evento1.id %}">Ver mas...</a>
                 </div>
                 
     
@@ -67,13 +67,9 @@
 
                     <i class="fa-solid fa-money-bill-wave"></i>
                        <h2>Calcula tus prestamos</h2>
-                       <p>Lorem ipsum dolor sit amet 
-                           consectetur adipisicing elit. At dolor 
-                           voluptatum suscipit
-                            dignissimos totam aperiam ducimus
-                             natus libero, cumque vitae.</p>
+                       <p>Ofrecemos diversos prestamos que se ajustan a tus nececidades</p>
                        
-                       <p class="btn">Calcular prestamos</p>
+                       <p class="btn">Ver prestamos</p>
                    </a>
                 </div>
             </div>
@@ -87,11 +83,7 @@
 
                     <i class="fa-solid fa-user-tie"></i>
                        <h2>Afiliate a Nosotros</h2>
-                       <p>Lorem ipsum dolor sit amet 
-                           consectetur adipisicing elit. At dolor 
-                           voluptatum suscipit
-                            dignissimos totam aperiam ducimus
-                             natus libero, cumque vitae.</p>
+                       <p>Completa el formulario de solicitud y aprobecha las ventajas de pertenecer a nuestra cooperativa</p>
                        
                        <p class="btn">Hacerse socio ahora</p>
                    </a>
@@ -109,7 +101,7 @@
     <div class="servicios_inner">
 
         <h2>Servicios</h2>
-        <h3>¿Como podemos ayudarte?</h3>
+        <h3 id="servicios_subtitulo_verde">¿Como podemos ayudarte?</h3>
         <div class="cards_container">
             <div class="card2">
                 <div class="icon">
@@ -117,8 +109,8 @@
                 </div>
     
                 <h3>Ahorros</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, odit!</p>
-                <a href="#">Ver mas...</a>
+                <p>Ofrecemos planes de Ahorro que se adaptan a tus planes</p>
+                <a href="{% url 'ahorros'%}">Ver mas...</a>
             </div>
             
             <div class="card2">
@@ -127,19 +119,19 @@
                 </div>
                 
                 <h3>Prestamos</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, odit!</p>
-                <a href="#">Ver mas...</a>
+                <p>Planes de prestamos que se adaptana ti</p>
+                <a href="{% url 'prestamos'%}">Ver mas...</a>
             </div>
             
             
             <div class="card2">
                 <div class="icon">
-                    <i class="fa-solid fa-briefcase"></i>
+                    <i class="fa-solid fa-hand-holding-hand"></i>
                 </div>
                 
-                <h3>Programa Emprende</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, odit!</p>
-                <a href="#">Ver mas...</a>
+                <h3>Plan de Ayuda Mutua</h3>
+                <p>Acompañamos a nuestros socios en los momentos dificiles</p>
+                <a href="{% url 'ayudaMutua'%}">Ver mas...</a>
             </div>
 
             
@@ -162,7 +154,7 @@
                 </p>
                 <p> Gracias por elegirnos y confiar en nosotros, bienvenido(a) a Tú Cooperativa.</p>
                 <div class="text_ver">
-                    <a href="#">Ver mas...</a>
+                    <a href="{% url 'historia'%}">Ver mas...</a>
                 </div>
                 
             </div>

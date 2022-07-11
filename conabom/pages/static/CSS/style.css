@@ -271,7 +271,7 @@ nav ul li ul li a:hover{
 
 .contenido-slider{
     width: 100%;
-    height: 500px;
+    height: 700px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -284,7 +284,7 @@ nav ul li ul li a:hover{
 
 
 .contenido-slider{
-    background-size:cover;
+    background-size:100% 100%;
     background-repeat: no-repeat;
     background-position: center;
     
@@ -463,6 +463,9 @@ nav ul li ul li a:hover{
     letter-spacing: 1px;
     font-style: italic;
 }
+#servicios_subtitulo_verde{
+    color:#34673C;
+}
 .cards_container{
     width: 100%;
     display: flex;
@@ -538,7 +541,8 @@ nav ul li ul li a:hover{
     font-weight:600;
     font-size: 14px;
     color: #ffffff;
-    margin: 0;
+    margin: 2%;
+    padding: 5px;
 } 
 
 .cards_container .card a{
@@ -1856,7 +1860,12 @@ footer{
 /*slider*/
 @media screen and (max-width:900px){
     
-
+    .contenido-slider{
+        width: 100%;
+        height: 500px;
+        
+        
+    }
     
     .contenido-slider > div{
         width: 40%;
@@ -1879,6 +1888,7 @@ footer{
     }
     .contenido-slider{
        flex-direction: column-reverse;
+       
     }
 
     .contenido-slider > div{

@@ -156,6 +156,7 @@ def userIndex(request):
     return render(request, "users/user_index.html", data) 
 
 #cambio de contraseña
+@login_required
 def change_password(request):
     if request.method == 'POST':
         form = PasswordChangeForm(request.user, request.POST)
@@ -163,7 +164,7 @@ def change_password(request):
             user = form.save()
             update_session_auth_hash(request, user)  # Important!
             messages.success(request, 'se ha actualizado tu Contraseña!')
-            return redirect('passwordChange')
+            return redirect('login')
         else:
             messages.error(request, 'por favor corrija los siguientes errores:')
     else:

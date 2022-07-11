@@ -1020,7 +1020,14 @@ nav ul li ul li a:hover{
     margin: 10% 0;
  }
  
- 
+ .form_section{
+    margin-left: 2% ;
+ }
+ .pass_help_text ul{
+    list-style: none;
+    font-size: 12px;
+
+ }
 .form_label{
     min-width: 100px;
     
@@ -2129,8 +2136,9 @@ footer{
     }
     .user-content{
 
-       
-        min-height: none;
+       min-width: 0;
+       box-sizing: border-box;
+       overflow-wrap: break-word;
      }
 }
 

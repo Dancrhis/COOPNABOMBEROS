@@ -1008,9 +1008,9 @@ nav ul li ul li a:hover{
 .user-content{
 
     display: flex;
-
+    
     margin-right: 30px;
-    max-width: 720px;
+    min-width: 420px;
     flex-direction: column;
     min-height: 350px;
  }
@@ -2127,6 +2127,11 @@ footer{
     .login_link{
         display: list-item;
     }
+    .user-content{
+
+       
+        min-height: none;
+     }
 }
 
 /*menu estilo 2*/

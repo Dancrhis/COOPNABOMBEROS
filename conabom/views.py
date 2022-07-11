@@ -6,12 +6,12 @@ from django.contrib import messages
 from django.shortcuts import redirect, render
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, PasswordChangeForm
 from django.contrib.auth import authenticate, login
 from conabom.forms import CustomUserCreationForm
 from conabom.models import Beneficiario, ImagenesGaleria, Slider, Socio, Noticia, Evento
 from django.core.paginator import Paginator
-
+from django.contrib.auth import update_session_auth_hash
 # Create your views here.
 
 #index
@@ -155,7 +155,22 @@ def userIndex(request):
 
     return render(request, "users/user_index.html", data) 
 
-
+#cambio de contraseña
+def change_password(request):
+    if request.method == 'POST':
+        form = PasswordChangeForm(request.user, request.POST)
+        if form.is_valid():
+            user = form.save()
+            update_session_auth_hash(request, user)  # Important!
+            messages.success(request, 'se ha actualizado tu Contraseña!')
+            return redirect('passwordChange')
+        else:
+            messages.error(request, 'por favor corrija los siguientes errores:')
+    else:
+        form = PasswordChangeForm(request.user)
+    return render(request, 'users/user_password_change.html', {
+        'form': form
+    })
 
 @login_required
 def userApplication(request):

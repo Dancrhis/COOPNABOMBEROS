@@ -15,6 +15,7 @@ urlpatterns = [
     path('planAyudaMutua/', views.planAyudaMutua, name='ayudaMutua'),
     path('user_index/', views.userIndex, name='userIndex'),
     path('register/', views.registro, name='register'),
+    path('accounts/password_change/', views.change_password, name='passwordChange'),
     path('noticias/', views.noticiasIndex, name='noticias'),
     path('noticias/noticiaDetalles/<int:pk>', views.noticiaDetalles, name='noticiaDetalles'),
     path('eventos_Actividades/', views.eventosActividadesIndex, name='eventos'),

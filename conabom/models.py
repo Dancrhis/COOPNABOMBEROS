@@ -14,7 +14,7 @@ class Socio(models.Model):
     ESTADOS=[("en proceso","en proceso"),
             ("aprobada","aprobada"),
             ("rechazada","rechazada"),]
-    fechaSolicitud=models.DateTimeField(default=timezone.now)
+    fechaSolicitud=models.DateField( auto_now_add=True)
     usuario=models.OneToOneField(User,to_field='username', on_delete=models.CASCADE)
     estado=models.CharField(max_length=50, default="en proceso", choices=ESTADOS)
     fechaValidacion=models.DateTimeField(null=True,default=timezone.now)
@@ -66,16 +66,16 @@ class Noticia(models.Model):
     foto=models.ImageField( upload_to="images/%y%m%d",null=True,blank=True)
     titulo=models.CharField(default="titulo", max_length=300,blank=True, editable=True)
     contenido=models.TextField(default="detalles",  blank=True)
-    fechaPublicacion=models.DateTimeField(default=timezone.now)
+    fechaPublicacion=models.DateField( auto_now_add=True)
 
 class Evento(models.Model):
     foto=models.ImageField(upload_to="images/%y%m%d",null=True,blank=True)
     titulo=models.CharField(default="titulo", max_length=300,blank=True, editable=True)
     contenido=models.TextField(default="detalles",  blank=True)
-    fechaPublicacion=models.DateTimeField(default=timezone.now)
+    fechaPublicacion=models.DateField( auto_now_add=True)
 
 
 class ImagenesGaleria(models.Model):
     foto=models.ImageField(upload_to="galeria/%y%m%d", null=True, blank=True)
     titulo=models.CharField(default="titulo", max_length=300,blank=True, editable=True)
-    fechaPublicacion=models.DateTimeField(default=timezone.now)
+    fechaPublicacion=models.DateField( auto_now_add=True)

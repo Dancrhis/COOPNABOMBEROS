@@ -14,14 +14,14 @@ class Socio(models.Model):
     ESTADOS=[("en proceso","en proceso"),
             ("aprobada","aprobada"),
             ("rechazada","rechazada"),]
-    fechaSolicitud=models.DateField( auto_now_add=True)
+    fechaSolicitud=models.DateTimeField( auto_now_add=True)
     usuario=models.OneToOneField(User,to_field='username', on_delete=models.CASCADE)
-    estado=models.CharField(max_length=50, default="en proceso", choices=ESTADOS)
+    estado=models.CharField(max_length=50, default="en proceso", choices=ESTADOS, editable=True)
     fechaValidacion=models.DateTimeField(null=True,default=timezone.now)
     acta=models.CharField(max_length=100, null=True, default="ninguna")
     
 
-    cedula=models.IntegerField(primary_key=True)
+    cedula=models.BigIntegerField(primary_key=True)
     nombre1=models.CharField(max_length=100, null=False)
     nombre2=models.CharField(max_length=100, null=True, blank=True)
     apellido1=models.CharField(max_length=100, null=False)
@@ -66,16 +66,16 @@ class Noticia(models.Model):
     foto=models.ImageField( upload_to="images/%y%m%d",null=True,blank=True)
     titulo=models.CharField(default="titulo", max_length=300,blank=True, editable=True)
     contenido=models.TextField(default="detalles",  blank=True)
-    fechaPublicacion=models.DateField( auto_now_add=True)
+    fechaPublicacion=models.DateTimeField( default=timezone.now)
 
 class Evento(models.Model):
     foto=models.ImageField(upload_to="images/%y%m%d",null=True,blank=True)
     titulo=models.CharField(default="titulo", max_length=300,blank=True, editable=True)
     contenido=models.TextField(default="detalles",  blank=True)
-    fechaPublicacion=models.DateField( auto_now_add=True)
+    fechaPublicacion=models.DateTimeField( default=timezone.now)
 
 
 class ImagenesGaleria(models.Model):
     foto=models.ImageField(upload_to="galeria/%y%m%d", null=True, blank=True)
     titulo=models.CharField(default="titulo", max_length=300,blank=True, editable=True)
-    fechaPublicacion=models.DateField( auto_now_add=True)
+    fechaPublicacion=models.DateTimeField( default=timezone.now)

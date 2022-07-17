@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-$wl44v2skgyz$&hev=a5i(5k)=d02m2v@zt&)_(-t_h$+q#^29
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['arcane-bayou-67214.herokuapp.com','127.0.0.1','https://www.mlcalc.com/']
+ALLOWED_HOSTS = ['arcane-bayou-67214.herokuapp.com','127.0.0.1','https://www.mlcalc.com/', 'monkfish-app-2e8ud.ondigitalocean.app']
 
 #archivos staticos
 DIR_STATIC=os.path.join(BASE_DIR, "conabom/pages/static/")
@@ -141,7 +141,7 @@ EMAIL_HOST="smtp.gmail.com"
 EMAIL_USE_TLS=True
 EMAIL_PORT=587
 EMAIL_HOST_USER='cristophermartinez1989@gmail.com'
-EMAIL_HOST_PASSWORD="wmbzagmoqejwphfy"
+EMAIL_HOST_PASSWORD="jvkhmmzuoemqrvdp"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field

@@ -94,8 +94,8 @@ WSGI_APPLICATION = 'conaweb.wsgi.application'
 #}
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'conabom',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'COOPNABOMBEROS',
         'USER': 'CONABOMADMIN',
         'PASSWORD': 'CoopNaBomberos2021',
         'HOST': 'localhost',

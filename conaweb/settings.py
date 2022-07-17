@@ -96,7 +96,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'COOPNABOMBEROS',
-        'USER': 'CONABOMADMIN',
+        'USER': 'conabomadmin',
         'PASSWORD': 'CoopNaBomberos2021',
         'HOST': 'localhost',
         'PORT': '',

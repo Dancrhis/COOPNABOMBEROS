@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-$wl44v2skgyz$&hev=a5i(5k)=d02m2v@zt&)_(-t_h$+q#^29
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['arcane-bayou-67214.herokuapp.com','127.0.0.1','https://www.mlcalc.com/', 'monkfish-app-2e8ud.ondigitalocean.app','134.122.52.247']
+ALLOWED_HOSTS = ['arcane-bayou-67214.herokuapp.com','127.0.0.1','https://www.mlcalc.com/', 'clownfish-app-jmsml.ondigitalocean.app','134.122.52.247']
 
 #archivos staticos
 DIR_STATIC=os.path.join(BASE_DIR, "conabom/pages/static/")

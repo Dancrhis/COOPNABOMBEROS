@@ -34,7 +34,7 @@ DEBUG = True
 #[label django_app/settings.py]
 #DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "False") == "True"
 
-ALLOWED_HOSTS = ['arcane-bayou-67214.herokuapp.com','127.0.0.1','https://www.mlcalc.com/', 'clownfish-app-jmsml.ondigitalocean.app','134.122.52.247']
+ALLOWED_HOSTS = ['arcane-bayou-67214.herokuapp.com','127.0.0.1','https://www.mlcalc.com/', 'clownfish-app-jmsml.ondigitalocean.app','134.122.52.247','coopnabomberos.com']
 #[label django_app/settings.py]
 #ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 #archivos staticos

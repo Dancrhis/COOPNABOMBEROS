@@ -227,44 +227,68 @@ def socio_update(request, pk):
 
 @login_required
 def userApplication2(request):
+    benep=Beneficiario.objects.all().filter(afiliado=request.user)
+    porciento=0
+
+    for benef in benep:
+        porciento+=benef.porcentaje
     data={
-        'form': BeneficiarioForms()
+        'form': BeneficiarioForms(),
+        'porciento':porciento
     }
     if request.method=="POST":
-        beneficiario= BeneficiarioForms(data=request.POST)
-        print(beneficiario.is_valid())
-        for field in beneficiario:
-            print("Field Error:", field.name,  field.errors)
         
-        if beneficiario.is_valid():
+        beneficiario= BeneficiarioForms(data=request.POST)
+        
+        postPorciento=int(request.POST['porcentaje'])
+        porciento+=postPorciento
+        if beneficiario.is_valid() and porciento<101:
             
             
             beneficiario.save()
             return redirect(to='userIndex')
         else:
-            data={
+            if porciento>100:
+                data={
 
-                'form': beneficiario
-                }
-            
-            return render(request, 'users/user_application2.html', data)
+                    'form': beneficiario,
+                    'message': "no puede exceder el 100%",
+                    'porciento':porciento
+                    }
+                
+                return render(request, 'users/user_application2.html', data)
+            else:
+                data={
+
+                    'form': beneficiario,
+                    }
+                return render(request, 'users/user_application2.html', data)
+
 
     return render(request, 'users/user_application2.html', data)
 
 @login_required
 def beneficiario_update(request, pk):
     bene=Beneficiario.objects.get(id=pk)
-
-    if request.method =='POST':
+    benep=Beneficiario.objects.all().filter(afiliado=request.user)
+    porciento=0
+    for benef in benep:
+        porciento+=benef.porcentaje
+    
+        
+    if request.method =='POST': 
+        postPorciento=int(request.POST['porcentaje'])
+        porciento+=postPorciento
+        porciento-=bene.porcentaje
         form = BeneficiarioForms(request.POST, instance = bene)
-        if form.is_valid():
+        if form.is_valid()and porciento<101:
             form.save()
 
             return redirect( to='userIndex')
     else:
         form = BeneficiarioForms(instance=bene)
 
-    return render(request,'users/beneficiario_update.html',{'form': form} )
+    return render(request,'users/beneficiario_update.html',{'form': form, 'porciento':porciento} )
         
             
 

@@ -95,58 +95,69 @@
                     
                         <div class="calculadora">
                             <div class="calculadora_inner">
-                                <div class="subtitulo2_ahorros">
-                                    <h3>calculadora de Prestamos:</h3>
-                                </div>
-                                <form action="https://www.mlcalc.com/" method="post" onsubmit="return mlcalcCalculate(this)">
-                                <input type="hidden" name="wl" value="es">
-                                <div class="calculadora_subdiv">
-                                    <label for="la">Cantidad Prestamo: </label>
-                                    <input type="number" name="la"  placeholder="$"> 
-                                </div>
-                                <div class="calculadora_subdiv">
-                                    <label for="lt">Tiempo Prestamo:  </label>
-                                    <input type="number" name="lt"  placeholder="cantidad de años">
-                                </div>
-                                <div class="calculadora_subdiv">
-                                    <label for="ir">Tasa de Interes:  </label>
-                                    <input type="text" name="ir"  placeholder="%">
-                                </div>
-                                <div class="calculadora_subdiv">
-                                     <label for="sm">Fecha del primer pago (Mes): </label>
-                                     <input type="number" name="sm" placeholder="Ejemplo:2" placeholder="" >
-                                </div>
-                                <div class="calculadora_subdiv">
-                                    <label for="sy">Fecha del primer pago (Año):</label>
-                                    <input type="number" name="sy" placeholder="Ejemplo: 2020">
-                                </div>
-                                <div class="calculadora_subdiv_radio">
-                                    <label>Amotizacion:</label>
-                                    <div>
-                                        <label><input type="radio" name="as" value="Año" checked="checked">Mostrar por año</label>
+                                    <div class="subtitulo2_ahorros">
+                                        <h3>calculadora de Prestamos:</h3>
                                     </div>
-                                   <div>
-                                        <label><input type="radio" name="as" value="Mes">Mostrar por mes</label>
-                                   </div>
-                                   <div>
-                                        <label><input type="radio" name="as" value="No mostrar"> No mostrar</label>
-                                   </div>
-                                   
-                                </div>
-                                <div class="calculadora_btn">
-                                    <input type="submit" value="Calcular">
-                                </div>
+
+                                    <form action="https://www.mlcalc.com/" method="post" onsubmit="return mlcalcCalculate(this)">
+                                    
+                                        <input type="hidden" name="wl" value="es">
+
+
+                                        <div class="calculadora_subdiv">
+                                            <label for="la">Cantidad Prestamo: </label>
+                                            <input type="number" name="la"  placeholder="$"> 
+                                        </div>
+
+
+                                        <div class="calculadora_subdiv">
+                                            <label for="lt">Tiempo Prestamo:  </label>
+                                            <input type="number" name="lt"  placeholder="cantidad de años">
+                                        </div>
+
+
+                                        <div class="calculadora_subdiv">
+                                            <label for="ir">Tasa de Interes:  </label>
+                                            <input type="text" name="ir"  placeholder="%">
+                                        </div>
+
+
+                                        <div class="calculadora_subdiv">
+                                            <label for="sm">Fecha del primer pago (Mes): </label>
+                                            <input type="number" name="sm" placeholder="Ejemplo:2" placeholder="" >
+                                        </div>
+
+
+                                        <div class="calculadora_subdiv">
+                                            <label for="sy">Fecha del primer pago (Año):</label>
+                                            <input type="number" name="sy" placeholder="Ejemplo: 2020">
+                                        </div>
+
+
+                                        <div class="calculadora_subdiv_radio">
+                                                <label>Amotizacion:</label>
+                                                <div>
+                                                    <label><input type="radio" name="as" value="Año" checked="checked">Mostrar por año</label>
+                                                </div>
+                                                <div>
+                                                        <label><input type="radio" name="as" value="Mes">Mostrar por mes</label>
+                                                </div>
+                                                <div>
+                                                        <label><input type="radio" name="as" value="No mostrar"> No mostrar</label>
+                                                </div>
+                                        </div>
+
+
                                 
+                            
+                                        <div class="calculadora_btn">
+                                            <input type="submit" value="Calcular">
+                                        </div>
+                                    </form>
                                 
-                               
-                                
-                                
-                                
-                                
+                            
                             </div>
-                            </form>
-                            </div>
-                        
+                        </div>
                         
                             
                     
@@ -157,6 +168,28 @@
             </div>   
             <div class="more_info">
                 <div class="more_info_content">
+                    <div class="more_info_section">
+    
+                        
+                        <!-- MORTGAGE LOAN CALCULATOR BEGIN -->
+                        <script type="text/javascript">
+                            mlcalc_default_calculator = 'loan_only';
+                            mlcalc_currency_code      = 'DOP';
+                            mlcalc_amortization       = 'month';
+                            mlcalc_purchase_price     = '300,000';
+                            mlcalc_down_payment       = '20';
+                            mlcalc_mortgage_term      = '30';
+                            mlcalc_interest_rate      = '4.5';
+                            mlcalc_property_tax       = '3,000';
+                            mlcalc_property_insurance = '1,500';
+                            mlcalc_pmi                = '0.52';
+                            mlcalc_loan_amount        = '250,000';
+                            mlcalc_loan_term          = '15';
+                            </script>
+                            <script type="text/javascript">if(typeof jQuery == "undefined"){document.write(unescape("%3Cscript src='" + (document.location.protocol == 'https:' ? 'https:' : 'http:') + "//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));mlcalc_jquery_noconflict=1;};</script><div style="font-weight:normal;font-size:9px;font-family:Tahoma;padding:0;margin:0;border:0;text-align:center;background:transparent;color:#EEEEEE;width:300px;text-align:right;padding-right:10px;" id="mlcalcWidgetHolder"><script type="text/javascript">document.write(unescape("%3Cscript src='https://www.mlcalc.com/es/widget-wide.js' type='text/javascript'%3E%3C/script%3E"));</script><a href="https://www.mlcalc.com/" style="font-weight:normal;font-size:9px;font-family:Tahoma;color:#EEEEEE;text-decoration:none;">Mortgage Loan Calculator</a></div>
+                            <!-- MORTGAGE LOAN CALCULATOR END -->
+                        
+                    </div>
                     <div class="more_info_section">
     
                         <ul>

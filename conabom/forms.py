@@ -56,10 +56,13 @@ class SocioForm(ModelForm):
                 'lugarTrabajo',
                 'cargo',
                 'telefonoLugarTrabajo',
+                'banco',
+                'numeroCuenta',
                 'institucionAtencionEmergencia',
                 'ubicacion',
                 'aporte'
                 ]
+
         widgets={
             'nombre2': TextInput(attrs={'required': False, 'blank': False}, ),
             'apellido2': TextInput(attrs={'required': False, 'blank': False}),

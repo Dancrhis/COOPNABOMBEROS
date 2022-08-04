@@ -40,6 +40,8 @@ class Socio(models.Model):
     telefonoLugarTrabajo=models.BigIntegerField()
     institucionAtencionEmergencia=models.CharField(max_length=400, null=True)
     ubicacion=models.CharField(max_length=400, null=True)
+    banco=models.CharField(max_length=400, null=True)
+    numeroCuenta=models.BigIntegerField(null=True)
     aporte=models.IntegerField(default=0)
 
 class Beneficiario(models.Model):

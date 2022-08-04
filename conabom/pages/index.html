@@ -22,6 +22,7 @@
         <div class="contenedor">
             <div class="slider-contenedor">
                 
+                
                 <section class="contenido-slider" id="slide1" >
                     <div >
                         <h2>{{evento1.titulo}}</h2>
@@ -51,8 +52,12 @@
                     <a href="{% url 'eventoDetalles' evento1.id %}">Ver mas...</a>
                 </div>
                 
-    
+                
             </section>
+            <div>
+                <a class="slider_btn-right"><i class="fa-duotone fa-angle-right"></i></a>
+                <a class="slider_btn-left"><i class="fa-duotone fa-angle-left"></i></a>
+            </div>
         </div>
         </div>
         
@@ -63,13 +68,13 @@
             <div class="main_info1_container">
                 <div class="info1">
                     
-                   <a class="full_link" href="https://www.google.com">
+                   <a class="full_link" href="{% url 'prestamos'%}">
 
                     <i class="fa-solid fa-money-bill-wave"></i>
-                       <h2>Calcula tus prestamos</h2>
-                       <p>Ofrecemos diversos prestamos que se ajustan a tus nececidades</p>
+                       <h2>Calcula tus  préstamos </h2>
+                       <p>Ofrecemos diversos préstamos  que se ajustan a tus necesidades</p>
                        
-                       <p class="btn">Ver prestamos</p>
+                       <p class="btn">Ver  préstamos </p>
                    </a>
                 </div>
             </div>
@@ -118,7 +123,7 @@
                     <i class="fa-solid fa-sack-dollar"></i>
                 </div>
                 
-                <h3>Prestamos</h3>
+                <h3>Préstamos</h3>
                 <p>Planes de prestamos que se adaptan ti</p>
                 <a href="{% url 'prestamos'%}">Ver mas...</a>
             </div>
@@ -130,7 +135,7 @@
                 </div>
                 
                 <h3>Plan de Ayuda Mutua</h3>
-                <p>Acompañamos a nuestros socios en los momentos dificiles</p>
+                <p>Acompañamos a nuestros socios en los momentos difíciles</p>
                 <a href="{% url 'ayudaMutua'%}">Ver mas...</a>
             </div>
 
@@ -147,8 +152,8 @@
         <div class="full_section_container">
             <div class="text_container">
                 <h2> Quienes Somos</h2>
-                <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, aliquid vel consectetur doloremque mollitia eaque!</h3>
-                <p>Para la Cooperativa San José, es trascendental que nuestros asociados se sientan a gusto con el trato que reciben de nuestros colaboradores. Satisfacer sus necesidades es nuestra  prioridad, porque forman parte de nosotros.
+                <h3>Somos una asociación libre, de personas que formamos una empresa económica de carácter solidario, de administración democrática y de beneficio común, basada en los Principios y Valores del Cooperativismo.</h3>
+                <p>Para la Cooperativa Nacional de Bomberos, es trascendental que nuestros asociados se sientan a gusto con el trato que reciben de nuestros colaboradores. Satisfacer sus necesidades es nuestra  prioridad, porque forman parte de nosotros.
                     Uno de nuestros objetivos es lograr una gestión administrativa y financiera eficiente, en donde las personas de menos recursos tengan la oportunidad de acceder a servicios financieros confiables y competitivos, con el fin de mejorar su calidad de vida, contribuyendo con su educación, desarrollo económico y social.    
                     
                 </p>
